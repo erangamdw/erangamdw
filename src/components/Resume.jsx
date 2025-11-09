@@ -3,73 +3,71 @@ import resumeFile from "../documents/resume.pdf";
 
 const Resume = () => {
   const educationDetails = [
-    {
-      yearRange: "2015 - 2017",
-      title: "Master in Computer Engineering",
-      place: "Harvard University",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dummy text.",
-    },
-    {
-      yearRange: "2014 - 2015",
-      title: "Bachelor in Computer Engineering",
-      place: "University of California",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dummy text.",
-    },
-    {
-      yearRange: "2013 - 2014",
-      title: "International Science",
-      place: "Harvard University",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dummy text.",
-    },
-  ];
+  {
+    yearRange: "2024 - 2025",
+    title: "MSc in Data Science & Artificial Intelligence",
+    place: "Edge Hill University, United Kingdom",
+    desc: "Specialized in Deep Learning, Machine Learning, Natural Language Processing, and AI systems development. Completed final project 'InstaLeaf: AI-Powered Plant Disease Classification'.",
+  },
+  {
+    yearRange: "2022 - 2023",
+    title: "BSc (Hons) in Computer Science (Software Engineering) – First Class",
+    place: "University of Wolverhampton, United Kingdom",
+    desc: "Focused on full-stack software development, web and mobile technologies, and intelligent systems design.",
+  },
+  {
+    yearRange: "2018 - 2020",
+    title: "Higher National Diploma in Computing (Software Engineering)",
+    place: "Pearson BTEC, Sri Lanka",
+    desc: "Gained strong foundation in software engineering, databases, and system design. Completed multiple academic and freelance projects.",
+  },
+];
 
-  const experienceDetails = [
-    {
-      yearRange: "2020 - current",
-      title: "Sr. Font End Developer",
-      place: "Apple Inc",
-      desc: "Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.",
-    },
-    {
-      yearRange: "2018 - 2020",
-      title: "Jr. Font End Developer",
-      place: "Dribbble Inc",
-      desc: "Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.",
-    },
-    {
-      yearRange: "2017 - 2018",
-      title: "HTML Developer",
-      place: "Adobe Inc",
-      desc: "Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.",
-    },
-  ];
+const experienceDetails = [
+  {
+    yearRange: "Aug 2023 – Sep 2024",
+    title: "Senior Software Engineer",
+    place: "Efito Solutions (Pvt) Ltd, Sri Lanka",
+    desc: "Led development of full-stack web and mobile apps using MERN stack and Flutter. Integrated AI-assisted workflows, Socket.io, and ZegoCloud for real-time communication. Mentored junior developers and improved project efficiency by 30%.",
+  },
+  {
+    yearRange: "Feb 2022 – May 2024",
+    title: "Freelance Software Engineer (Remote)",
+    place: "Global Clients (Canada, UK, Europe)",
+    desc: "Delivered AI-enabled full-stack solutions using React, Node.js, Python, and AWS. Lead developer for HungerLink (Canada) and Arya Ayurveda platforms, achieving 40% performance boost and improved client engagement.",
+  },
+  {
+    yearRange: "May 2021 – Jun 2023",
+    title: "Software Engineer & Technical Support Engineer",
+    place: "LayoutIndex, Sri Lanka",
+    desc: "Developed and maintained apps in React, React Native, Node.js, and PHP. Provided enterprise-level technical support ensuring 99% uptime. Contributed to major projects including CineSync, EventsX, and OnlineAccounting.lk.",
+  },
+  {
+    yearRange: "Feb 2018 – Mar 2021",
+    title: "Associate Software Engineer / IT Officer",
+    place: "EMP (Pvt) Ltd, Sri Lanka",
+    desc: "Supported ERP (SAP) systems, managed server infrastructure, and optimized workflows improving efficiency by 15%.",
+  },
+  {
+    yearRange: "Aug 2017 – Jan 2018",
+    title: "IT Intern",
+    place: "IUCN Sri Lanka",
+    desc: "Provided IT helpdesk support, troubleshooting, and server maintenance. Built strong foundation in networking and system administration.",
+  },
+];
 
-  const skills = [
-    {
-      name: "Web Design",
-      percent: 65,
-    },
-    {
-      name: "HTML/CSS",
-      percent: 95,
-    },
-    {
-      name: "JavaScript",
-      percent: 80,
-    },
-    {
-      name: "React JS",
-      percent: 70,
-    },
-    {
-      name: "Angular Js",
-      percent: 60,
-    },
-    {
-      name: "Bootstrap",
-      percent: 99,
-    },
-  ];
+const skills = [
+  { name: "React.js / Next.js", percent: 95 },
+  { name: "Node.js / Express.js", percent: 90 },
+  { name: "Flutter / React Native", percent: 85 },
+  { name: "Python / TensorFlow / PyTorch", percent: 80 },
+  { name: "MongoDB / MySQL / SQL", percent: 85 },
+  { name: "Machine Learning / Deep Learning", percent: 90 },
+  { name: "Generative AI / LLMs / LangChain", percent: 85 },
+  { name: "AWS / Firebase / Docker", percent: 80 },
+  { name: "Socket.io / WebRTC / ZegoCloud", percent: 80 },
+];
+
 
   return (
     <section id="resume" className="section">

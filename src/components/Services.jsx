@@ -2,36 +2,36 @@ import React from "react";
 
 const Services = () => {
   // services details
-  const services = [
+const services = [
     {
-      name: "Graphic Design",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.",
-      icon: "fas fa-palette",
+      name: "AI & Machine Learning",
+      desc: "Building intelligent systems powered by Deep Learning, Computer Vision, and NLP using TensorFlow, PyTorch, and Hugging Face. Expertise in Generative AI, LLMs, and Agentic automation.",
+      icon: "fas fa-brain",
     },
     {
-      name: "Web Design",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.",
-      icon: "fas fa-desktop",
+      name: "Full Stack Web Development",
+      desc: "Designing and developing modern web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js) with scalable REST APIs, Socket.io, and real-time integrations.",
+      icon: "fas fa-laptop-code",
     },
     {
-      name: "UI/UX Design",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.",
-      icon: "fas fa-pencil-ruler",
+      name: "Mobile App Development",
+      desc: "Creating cross-platform mobile apps with Flutter and React Native, integrated with real-time communication (ZegoCloud, Socket.io) and secure payment systems (Stripe, PayPal).",
+      icon: "fas fa-mobile-alt",
     },
     {
-      name: "App Design & Develop",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.",
-      icon: "fas fa-paint-brush",
+      name: "Backend & API Engineering",
+      desc: "Developing robust, optimized, and secure backend services using Node.js, Express.js, and Python (Flask, FastAPI), delivering high performance with sub-200ms API response times.",
+      icon: "fas fa-server",
     },
     {
-      name: "Business Analysis",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.",
-      icon: "fas fa-chart-area",
+      name: "Cloud & DevOps Integration",
+      desc: "Deploying and managing scalable apps on AWS, Firebase, and Docker environments with CI/CD pipelines, ensuring performance, security, and reliability.",
+      icon: "fas fa-cloud",
     },
     {
-      name: "SEO Marketing",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.",
-      icon: "fas fa-bullhorn",
+      name: "Technical Support & ERP Systems",
+      desc: "Providing enterprise-grade support, troubleshooting, and ERP (SAP) maintenance. Ensuring system uptime, efficient workflows, and detailed technical documentation.",
+      icon: "fas fa-tools",
     },
   ];
 
