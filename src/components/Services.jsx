@@ -2,35 +2,35 @@ import React from "react";
 
 const Services = () => {
   // services details
-const services = [
+  const services = [
     {
       name: "AI & Machine Learning",
-      desc: "Building intelligent systems powered by Deep Learning, Computer Vision, and NLP using TensorFlow, PyTorch, and Hugging Face. Expertise in Generative AI, LLMs, and Agentic automation.",
+      desc: "Designing intelligent systems using Deep Learning, Computer Vision, and NLP with TensorFlow, PyTorch, and Hugging Face. Experienced in Generative AI, Large Language Models (LLMs), and agentic automation.",
       icon: "fas fa-brain",
     },
     {
-      name: "Full Stack Web Development",
-      desc: "Designing and developing modern web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js) with scalable REST APIs, Socket.io, and real-time integrations.",
+      name: "Full-Stack Web Development",
+      desc: "Building modern web applications with the MERN stack (MongoDB, Express.js, React.js, Node.js). Skilled in developing scalable REST APIs, real-time systems with Socket.io, and seamless integrations.",
       icon: "fas fa-laptop-code",
     },
     {
       name: "Mobile App Development",
-      desc: "Creating cross-platform mobile apps with Flutter and React Native, integrated with real-time communication (ZegoCloud, Socket.io) and secure payment systems (Stripe, PayPal).",
+      desc: "Developing cross-platform mobile apps using Flutter and React Native, integrated with real-time communication (ZegoCloud, Socket.io) and secure payment systems like Stripe and PayPal.",
       icon: "fas fa-mobile-alt",
     },
     {
       name: "Backend & API Engineering",
-      desc: "Developing robust, optimized, and secure backend services using Node.js, Express.js, and Python (Flask, FastAPI), delivering high performance with sub-200ms API response times.",
+      desc: "Engineering robust, optimized, and secure backend services with Node.js, Express.js, and Python (Flask, FastAPI). Focused on high-performance architecture with sub-200ms API response times.",
       icon: "fas fa-server",
     },
     {
       name: "Cloud & DevOps Integration",
-      desc: "Deploying and managing scalable apps on AWS, Firebase, and Docker environments with CI/CD pipelines, ensuring performance, security, and reliability.",
+      desc: "Deploying and maintaining scalable applications on AWS, Firebase, and Docker environments with CI/CD pipelines. Ensuring reliability, performance, and security across deployments.",
       icon: "fas fa-cloud",
     },
     {
       name: "Technical Support & ERP Systems",
-      desc: "Providing enterprise-grade support, troubleshooting, and ERP (SAP) maintenance. Ensuring system uptime, efficient workflows, and detailed technical documentation.",
+      desc: "Delivering enterprise-level technical support, troubleshooting, and ERP (SAP) maintenance. Ensuring system uptime, efficient workflows, and comprehensive technical documentation.",
       icon: "fas fa-tools",
     },
   ];
@@ -40,10 +40,10 @@ const services = [
       <div className="container">
         {/* Heading */}
         <p className=" text-center mb-2 wow fadeInUp">
-          <span className="bg-primary text-dark px-2">What I Do?</span>
+          <span className="bg-primary text-dark px-2">My Expertise</span>
         </p>
         <h2 className="text-10 fw-600 text-center mb-5 wow fadeInUp">
-          How I can help your next project
+          Areas where I bring value as a Software Engineer
         </h2>
         {/* Heading end*/}
         <div className="row gy-5 mt-5">
