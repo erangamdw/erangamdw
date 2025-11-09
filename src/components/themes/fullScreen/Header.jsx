@@ -64,7 +64,7 @@ const FullScreenHeader = ({ textWhite }) => {
             <span className="text-4 me-2">
               <i className="fas fa-phone" />
             </span>
-            (060) 444 434 444
+            (+44) 7542 135343
           </div>
           <button
             className={

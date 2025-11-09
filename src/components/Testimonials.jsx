@@ -12,7 +12,7 @@ const Testimonials = () => {
     },
     {
       name: "Patrick Cary",
-      position: "Freelancer from USA",
+      position: "Software Engineer from UK",
       src: "images/testimonial/client-sm-2.jpg",
       desc: " “I am happy Working with printing and typesetting industry. Quidam lisque persius interesset his et, in quot quidam persequeris essent possim iriure. simply dummy text of the printing and typesetting industry.”",
     },

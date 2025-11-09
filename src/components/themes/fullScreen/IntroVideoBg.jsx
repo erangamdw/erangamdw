@@ -28,7 +28,7 @@ const FullScreenVideoBgIntro = () => {
             <div className="row">
               <div className="col-lg-7 text-center text-lg-start align-self-center order-1 order-lg-0">
                 <h1 className="text-12 fw-300 mb-0 text-uppercase">
-                  Hi, I'm a Freelancer
+                  Hi, I'm a Software Engineer
                 </h1>
                 <h2 className="text-21 fw-600 text-uppercase mb-0 ms-n1">
                   <Typewriter

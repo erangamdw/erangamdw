@@ -23,7 +23,7 @@ const StandardMenuImgBgIntro = () => {
               <div className="row">
                 <div className="col-lg-12 text-center order-1 order-lg-0">
                   <h1 className="text-8 text-white fw-400 mb-0 text-uppercase">
-                    Hi, I'm a Freelancer
+                    Hi, I'm a Software Engineer
                   </h1>
                   <h2 className="text-23 text-white fw-600 text-uppercase mb-0 ms-n1">
                     <Typewriter

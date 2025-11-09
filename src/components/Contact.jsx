@@ -65,10 +65,10 @@ const Contact = () => {
             </p>
             <h3 className="text-5 fw-600">Living In:</h3>
             <address className="text-4">
-              30 Shacham street, Los Angeles, USA.
+              42, Belgrave Road, Ilford, IG1 3AP
             </address>
             <h3 className="text-5 fw-600">Call:</h3>
-            <p className="text-4">(+060) 444 434 444</p>
+            <p className="text-4">(+44) 7542 135343</p>
             <ul className="social-icons social-icons-lg justify-content-center justify-content-lg-start mt-5">
               <li className="social-icons-twitter">
                 <Tooltip text="Twitter" placement="top">

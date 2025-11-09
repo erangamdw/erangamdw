@@ -20,11 +20,13 @@ const AboutUs = () => {
               </span>
             </h2>
             <p className="text-5">
-              I'm a designer &amp; developer with a passion for web design. I
-              enjoy developing simple, clean and slick websites that provide
-              real value to the end user. Thousands of clients have procured
-              exceptional results while working with me. Delivering work within
-              time and budget which meets client’s requirements is our moto.
+            Software Engineer & AI Enthusiast with 6+ years of experience building AI-driven, full-stack web and mobile applications (MERN,
+            Flutter, React Native) and hands-on expertise in Machine Learning and Deep Learning. Published IEEE researcher with an MSc in
+            Data Science & Artificial Intelligence from Edge Hill University and a First-Class BSc (Hons) in Computer Science (Software
+            Engineering) from the University of Wolverhampton.
+            Skilled in delivering scalable, high-performance solutions, leading development teams, and integrating intelligent systems. Passionate
+            about AI-native development, LLMs, Generative AI, and Agentic automation, combining practical engineering expertise with applied
+            deep learning to build next-generation intelligent systems.
             </p>
           </div>
           <div
@@ -34,7 +36,7 @@ const AboutUs = () => {
             <div className="featured-box style-4">
               <div className="featured-box-icon text-25 fw-500 bg-primary rounded-circle">
                 <span className="wow heartBeat" data-wow-delay="1.3s">
-                  22
+                  7
                 </span>
               </div>
               <h3 className="text-7 wow rubberBand" data-wow-delay="2s">
@@ -58,11 +60,11 @@ const AboutUs = () => {
           </div>
           <div className="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
             <p className="text-muted fw-500 mb-0">Date of birth:</p>
-            <p className="text-4 text-dark fw-600 mb-0">11 November, 1987</p>
+            <p className="text-4 text-dark fw-600 mb-0">18 May, 1996</p>
           </div>
           <div className="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
             <p className="text-muted fw-500 mb-0">From:</p>
-            <p className="text-4 text-dark fw-600 mb-0">Los Angeles, USA.</p>
+            <p className="text-4 text-dark fw-600 mb-0">London, UK.</p>
           </div>
         </div>
       </div>
