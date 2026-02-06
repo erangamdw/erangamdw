@@ -131,6 +131,7 @@ const skillCategories = [
     items: [
       { name: "Flutter", icon: SiFlutter },
       { name: "Dart", icon: SiDart },
+      { name: "React Native", icon: SiReact },
     ],
   },
   {
@@ -149,23 +150,33 @@ const skillCategories = [
       { name: "Scikit-learn", icon: SiScikitlearn },
       { name: "TensorFlow", icon: SiTensorflow },
       { name: "PyTorch", icon: SiPytorch },
-      { name: "Hugging Face", icon: SiHuggingface },
+    ],
+  },
+  {
+    category: "LLMs / Generative AI",
+    items: [
+      { name: "Prompt Engineering", icon: null },
+      { name: "LLM Application Development", icon: null },
+      { name: "Hugging Face Transformers", icon: SiHuggingface },
+      { name: "RAG (Retrieval-Augmented Generation)", icon: null },
+      { name: "Embeddings & Vector Search", icon: null },
+      { name: "Inference Pipelines", icon: null },
     ],
   },
   {
     category: "Cloud / DevOps",
     items: [
-      { name: "AWS", icon: SiAmazonwebservices, },
+      { name: "AWS", icon: SiAmazonwebservices },
       { name: "Docker", icon: SiDocker },
       { name: "CI/CD (GitHub Actions)", icon: SiGithubactions },
       { name: "Git", icon: SiGit },
     ],
   },
   {
-    category: "Integrations",
+    category: "Integrations & Real-Time",
     items: [
       { name: "Socket.io", icon: SiSocketdotio },
-      { name: "ZegoCloud", icon: null }, // no official Simple Icon in react-icons/si
+      { name: "ZegoCloud", icon: null }, // no official icon
       { name: "Stripe", icon: SiStripe },
       { name: "PayPal", icon: SiPaypal },
       { name: "Redis", icon: SiRedis },
@@ -181,6 +192,7 @@ const skillCategories = [
     ],
   },
 ];
+
 
 
   return (
@@ -265,13 +277,32 @@ const skillCategories = [
                     const Icon = skill.icon;
                     return (
                       <span
-                        key={i}
-                        className="badge bg-light text-dark border px-3 py-2 d-inline-flex align-items-center gap-2"
-                        style={{ borderRadius: "999px", fontWeight: 500 }}
-                      >
-                        {Icon ? <Icon size={16} /> : null}
-                        {skill.name}
-                      </span>
+                      key={i}
+                      className="badge border px-3 py-2 d-inline-flex align-items-center gap-2"
+                      style={{
+                        borderRadius: "999px",
+                        fontWeight: 500,
+                        fontSize: 12,
+                        backgroundColor: "#f8f9fa",
+                        color: "#212529",
+                        cursor: "default",
+                        transition: "all 0.2s ease",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.08)";
+                        e.currentTarget.style.backgroundColor = "#F6DF4E";
+                        e.currentTarget.style.color = "#fff";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.backgroundColor = "#f8f9fa";
+                        e.currentTarget.style.color = "#212529";
+                      }}
+                    >
+                      {Icon ? <Icon size={30} /> : null}
+                      {skill.name}
+                    </span>
+
                     );
                   })}
                 </div>
