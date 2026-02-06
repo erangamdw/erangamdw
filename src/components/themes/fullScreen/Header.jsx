@@ -58,14 +58,29 @@ const FullScreenHeader = ({ textWhite }) => {
             />
           </Link>
           {/* Logo End */}
-          <div
+         <div
             className={"text-3 ms-auto me-2 " + (textWhite ? "text-white" : "")}
           >
-            <span className="text-4 me-2">
-              <i className="fas fa-phone" />
-            </span>
-            (+44) 7542 135343
+            <a
+              href="tel:+447542135343"
+              className={
+                "text-decoration-none " + (textWhite ? "text-white" : "text-dark")
+              }
+              style={{
+                transition: "opacity 0.2s ease",
+                cursor: "pointer",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.75")}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+            >
+              <span className="text-4 me-2">
+                <i className="fas fa-phone" />
+              </span>
+              (+44) 7542 135343
+            </a>
           </div>
+
+
           <button
             className={
               "navbar-toggler collapsed " + (isNavModalClose ? "" : "show")

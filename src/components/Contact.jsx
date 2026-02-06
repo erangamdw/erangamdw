@@ -67,7 +67,21 @@ If you’re looking for a backend-focused full stack engineer, mobile developer,
               London, United Kingdom
             </address>
             <h3 className="text-5 fw-600">Call:</h3>
-            <p className="text-4">(+44) 7542 135343</p>
+            <p className="text-4">
+              <a
+                href="tel:+447542135343"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  transition: "opacity 0.2s ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.75")}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+              >
+                (+44) 7542 135343
+              </a>
+            </p>
+
             <ul className="social-icons social-icons-lg justify-content-center justify-content-lg-start mt-5">
               <li className="social-icons-twitter">
                 <Tooltip text="Twitter" placement="top">
