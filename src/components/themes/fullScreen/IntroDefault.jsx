@@ -12,10 +12,10 @@ const FullScreenDefaultIntro = () => {
       <div className="container my-auto py-3">
         <div className="row">
           <div className="col-lg-7 text-center text-lg-start align-self-center order-1 order-lg-0 wow fadeIn">
-            <h1 className="text-12 fw-300 mb-0 text-uppercase">
-              Hi, I'm Eranga
+            <h1 className="text-16 fw-300 mb-0">
+              Hello, I'm Eranga
             </h1>
-            <h2 className="text-18 fw-600 text-uppercase mb-0 ms-n1">
+            <h2 className="text-16 fw-600 text-uppercase mb-0 ms-n1">
               <Typewriter
                 options={{
                   strings: ["Software Engineer", "Developer", "AI Researcher"],
@@ -51,7 +51,7 @@ const FullScreenDefaultIntro = () => {
             <div className="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn">
               <img
                 className="img-fluid rounded-pill d-block"
-                src="images/web-developer.jpg"
+                src="images/web-developer2.jpg"
                 title="I'm Eranga"
                 alt="I'm Eranga"
               />

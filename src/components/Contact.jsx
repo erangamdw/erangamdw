@@ -59,13 +59,12 @@ const Contact = () => {
           <div className="col-lg-5 text-center text-lg-start wow fadeInUp">
             <h2 className="text-10 fw-600 mb-5">Let's get in touch</h2>
             <p className="text-5 mb-5">
-              I enjoy discussing new projects and design challenges. Please
-              share as much info, as possible so we can get the most out of our
-              first catch-up.
+              I’m always open to discussing new opportunities, interesting projects, and technical challenges.
+If you’re looking for a backend-focused full stack engineer, mobile developer, or someone with a strong interest in AI and LLM-driven systems, feel free to reach out. The more details you share, the more productive our first conversation will be.
             </p>
             <h3 className="text-5 fw-600">Living In:</h3>
             <address className="text-4">
-              42, Belgrave Road, Ilford, IG1 3AP
+              London, United Kingdom
             </address>
             <h3 className="text-5 fw-600">Call:</h3>
             <p className="text-4">(+44) 7542 135343</p>

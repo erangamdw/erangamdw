@@ -4,29 +4,34 @@ import Accordion from "react-bootstrap/Accordion";
 const FAQs = () => {
   const faqsData = [
     {
-      question: "What is Eranga?",
+      question: "Who are you as a software engineer?",
       answer:
-        "Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna imperdiet.",
+        "I’m a backend-focused full stack software engineer with over 5 years of professional experience building scalable web and mobile applications. My core strength is backend development with Node.js, but I’m comfortable delivering complete end-to-end solutions including frontend and mobile apps.",
     },
     {
-      question: "How Can I Help You?",
+      question: "What roles are you currently looking for?",
       answer:
-        "Iisque Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. <br /> Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.",
+        "I’m primarily looking for backend-focused full stack roles, especially involving Node.js and API-driven systems. I’m also open to full stack roles, mobile development positions, and AI-related roles, particularly those involving Large Language Models (LLMs) and applied AI systems.",
     },
     {
-      question: "Simple process for workflow?",
+      question: "What is your strongest technical skill set?",
       answer:
-        "Iisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna imperdiet.",
+        "My strongest skills are in backend development using Node.js, Express, REST APIs, real-time systems with Socket.io, authentication, payments (Stripe), and database design with MongoDB and SQL. I focus heavily on clean architecture, performance, and maintainability.",
     },
     {
-      question: "Is Eranga a Multi-purpose template?",
+      question: "Do you have mobile development experience?",
       answer:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.",
+        "Yes. I have hands-on experience developing cross-platform mobile applications using Flutter. I’ve built and maintained production mobile apps that integrate with backend APIs, real-time services, and cloud infrastructure.",
     },
     {
-      question: "Why responsive one page template?",
+      question: "Do you work with AI or Large Language Models (LLMs)?",
       answer:
-        "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.",
+        "Yes. I completed an MSc in Data Science & Artificial Intelligence, where my final research project focused on deep learning and explainable AI. I’m currently expanding my practical work in AI, particularly LLM-based applications, applied machine learning, and real-world AI system integration.",
+    },
+    {
+      question: "Are you open to UK-based opportunities?",
+      answer:
+        "Yes. I’m actively seeking UK-based roles and am open to on-site, hybrid, or remote opportunities. I’m especially interested in teams that value strong engineering practices, continuous learning, and real-world impact.",
     },
   ];
 
@@ -40,33 +45,30 @@ const FAQs = () => {
               <span className="bg-primary text-dark px-2">FAQ</span>
             </p>
             <h2 className="text-10 fw-600 text-center text-lg-start mb-5">
-              Have any questions?
+              Frequently Asked Questions
             </h2>
-            {/* Heading end*/}
+            {/* Heading end */}
 
             <Accordion flush defaultActiveKey="0">
-              {faqsData.length > 0 &&
-                faqsData.map((faq, index) => (
-                  <Accordion.Item eventKey={index} key={index}>
-                    <Accordion.Header>{faq.question}</Accordion.Header>
-                    <Accordion.Body
-                      dangerouslySetInnerHTML={{ __html: faq.answer }}
-                    ></Accordion.Body>
-                  </Accordion.Item>
-                ))}
+              {faqsData.map((faq, index) => (
+                <Accordion.Item eventKey={index.toString()} key={index}>
+                  <Accordion.Header>{faq.question}</Accordion.Header>
+                  <Accordion.Body>{faq.answer}</Accordion.Body>
+                </Accordion.Item>
+              ))}
             </Accordion>
           </div>
+
           <div
             className="col-lg-6 d-flex align-items-center justify-content-center order-0 order-lg-1 wow fadeIn"
             data-wow-delay="1s"
           >
-            {" "}
             <img
               className="img-fluid"
               src="images/faq.png"
               title="FAQ"
-              alt="faq"
-            />{" "}
+              alt="FAQ illustration"
+            />
           </div>
         </div>
       </div>

@@ -40,7 +40,7 @@ const AboutUs = () => {
                 </span>
               </div>
               <h3 className="text-7 wow rubberBand" data-wow-delay="2s">
-                Years of <span className="fw-700">Experiance</span>
+                Years of <span className="fw-700">Experience</span>
               </h3>
             </div>
           </div>
@@ -48,7 +48,7 @@ const AboutUs = () => {
         <div className="row gy-3 mt-4">
           <div className="col-6 col-lg-3 wow fadeInUp">
             <p className="text-muted fw-500 mb-0">Name:</p>
-            <p className="text-4 text-dark fw-600 mb-0">Wasaba Eranga</p>
+            <p className="text-4 text-dark fw-600 mb-0">Wasaba Eranga Madapathage Don</p>
           </div>
           <div className="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
             <p className="text-muted fw-500 mb-0">Email:</p>
@@ -58,10 +58,10 @@ const AboutUs = () => {
               </a>
             </p>
           </div>
-          <div className="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+          {/* <div className="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
             <p className="text-muted fw-500 mb-0">Date of birth:</p>
             <p className="text-4 text-dark fw-600 mb-0">18 May, 1996</p>
-          </div>
+          </div> */}
           <div className="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
             <p className="text-muted fw-500 mb-0">From:</p>
             <p className="text-4 text-dark fw-600 mb-0">London, UK.</p>

@@ -1,5 +1,44 @@
 import React from "react";
 import resumeFile from "../documents/resume.pdf";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiRedux,
+  SiTailwindcss,
+  SiBootstrap,
+  SiMui,
+  SiNodedotjs,
+  SiExpress,
+  SiPython,
+  SiFastapi,
+  SiFlask,
+  SiPhp,
+  SiLaravel,
+  SiMongodb,
+  SiMysql,
+  SiPostgresql,
+  SiSqlite,
+  SiFirebase,
+  SiTensorflow,
+  SiPytorch,
+  SiScikitlearn,
+  SiHuggingface,
+  SiAmazonwebservices,
+  SiDocker,
+  SiGithubactions,
+  SiGit,
+  SiSocketdotio,
+  SiStripe,
+  SiPaypal,
+  SiRedis,
+  SiJest,
+  SiJira,
+  SiClickup,
+  SiAsana,
+  SiFlutter,
+  SiDart,
+} from "react-icons/si";
+
 
 const Resume = () => {
   const educationDetails = [
@@ -26,46 +65,121 @@ const Resume = () => {
 const experienceDetails = [
   {
     yearRange: "Aug 2023 – Sep 2024",
-    title: "Senior Software Engineer",
+    title: "Software Engineer",
     place: "Efito Solutions (Pvt) Ltd, Sri Lanka",
-    desc: "Led development of full-stack web and mobile apps using MERN stack and Flutter. Integrated AI-assisted workflows, Socket.io, and ZegoCloud for real-time communication. Mentored junior developers and improved project efficiency by 30%.",
-  },
-  {
-    yearRange: "Feb 2022 – May 2024",
-    title: "Freelance Software Engineer (Remote)",
-    place: "Global Clients (Canada, UK, Europe)",
-    desc: "Delivered AI-enabled full-stack solutions using React, Node.js, Python, and AWS. Lead developer for HungerLink (Canada) and Arya Ayurveda platforms, achieving 40% performance boost and improved client engagement.",
+    desc: "Led development of large-scale web and mobile applications using the MERN stack and Flutter. Built systems including Zulu Courier and Fan Budget platforms, streamlining delivery workflows and improving operational efficiency by 30%. Developed scalable REST APIs with Node.js and Express.js supporting 10K+ users with sub-200ms response times. Integrated Socket.io and ZegoCloud for real-time communication and AI-enhanced call management. Mentored and trained junior developers, improving team productivity and code quality.",
   },
   {
     yearRange: "May 2021 – Jun 2023",
     title: "Software Engineer & Technical Support Engineer",
     place: "LayoutIndex, Sri Lanka",
-    desc: "Developed and maintained apps in React, React Native, Node.js, and PHP. Provided enterprise-level technical support ensuring 99% uptime. Contributed to major projects including CineSync, EventsX, and OnlineAccounting.lk.",
+    desc: "Engineered and maintained applications using React.js, React Native, Node.js, and PHP across projects such as EventsX, CineSync, Dogota, Syscolabs Web, and OnlineAccounting. Worked directly with UK-based clients, providing enterprise-level technical support, diagnosing complex infrastructure and software issues, and ensuring 99% system uptime while balancing development and support responsibilities.",
   },
   {
     yearRange: "Feb 2018 – Mar 2021",
-    title: "Associate Software Engineer / IT Officer",
+    title: "Associate Software Engineer",
     place: "EMP (Pvt) Ltd, Sri Lanka",
-    desc: "Supported ERP (SAP) systems, managed server infrastructure, and optimized workflows improving efficiency by 15%.",
+    desc: "Contributed to web application development while supporting and enhancing ERP systems using SAP and MS SQL Server. Worked on internal web-based tools and system integrations, alongside workflow optimisations that improved efficiency by 15%. Maintained IT infrastructure including servers, Active Directory, DNS/DHCP, and backups, and provided day-to-day technical support to ensure system reliability.",
   },
   {
     yearRange: "Aug 2017 – Jan 2018",
     title: "IT Intern",
     place: "IUCN Sri Lanka",
-    desc: "Provided IT helpdesk support, troubleshooting, and server maintenance. Built strong foundation in networking and system administration.",
+    desc: "Provided IT helpdesk support, troubleshooting hardware, software, and network-related issues. Assisted with Windows server maintenance and system administration tasks, gaining hands-on experience in enterprise IT operations and networking fundamentals.",
   },
 ];
 
-const skills = [
-  { name: "React.js / Next.js", percent: 95 },
-  { name: "Node.js / Express.js", percent: 90 },
-  { name: "Flutter / React Native", percent: 85 },
-  { name: "Python / TensorFlow / PyTorch", percent: 80 },
-  { name: "MongoDB / MySQL / SQL", percent: 85 },
-  { name: "Machine Learning / Deep Learning", percent: 90 },
-  { name: "Generative AI / LLMs / LangChain", percent: 85 },
-  { name: "AWS / Firebase / Docker", percent: 80 },
-  { name: "Socket.io / WebRTC / ZegoCloud", percent: 80 },
+
+
+// const skills = [
+//   { name: "React.js / Next.js", percent: 95 },
+//   { name: "Node.js / Express.js", percent: 90 },
+//   { name: "Flutter / React Native", percent: 85 },
+//   { name: "Python / TensorFlow / PyTorch", percent: 80 },
+//   { name: "MongoDB / MySQL / SQL", percent: 85 },
+//   { name: "Machine Learning / Deep Learning", percent: 90 },
+//   { name: "Generative AI / LLMs / LangChain", percent: 85 },
+//   { name: "AWS / Firebase / Docker", percent: 80 },
+//   { name: "Socket.io / WebRTC / ZegoCloud", percent: 80 },
+// ];
+const skillCategories = [
+  {
+    category: "Frontend",
+    items: [
+      { name: "React.js", icon: SiReact },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "Redux / Redux Toolkit", icon: SiRedux },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "Bootstrap", icon: SiBootstrap },
+      { name: "Material UI", icon: SiMui },
+    ],
+  },
+  {
+    category: "Backend",
+    items: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "Python", icon: SiPython },
+      { name: "FastAPI", icon: SiFastapi },
+      { name: "Flask", icon: SiFlask },
+      { name: "PHP", icon: SiPhp },
+      { name: "Laravel", icon: SiLaravel },
+    ],
+  },
+  {
+    category: "Mobile",
+    items: [
+      { name: "Flutter", icon: SiFlutter },
+      { name: "Dart", icon: SiDart },
+    ],
+  },
+  {
+    category: "Databases",
+    items: [
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "MySQL", icon: SiMysql },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "SQLite", icon: SiSqlite },
+      { name: "Firebase", icon: SiFirebase },
+    ],
+  },
+  {
+    category: "AI / Machine Learning",
+    items: [
+      { name: "Scikit-learn", icon: SiScikitlearn },
+      { name: "TensorFlow", icon: SiTensorflow },
+      { name: "PyTorch", icon: SiPytorch },
+      { name: "Hugging Face", icon: SiHuggingface },
+    ],
+  },
+  {
+    category: "Cloud / DevOps",
+    items: [
+      { name: "AWS", icon: SiAmazonwebservices, },
+      { name: "Docker", icon: SiDocker },
+      { name: "CI/CD (GitHub Actions)", icon: SiGithubactions },
+      { name: "Git", icon: SiGit },
+    ],
+  },
+  {
+    category: "Integrations",
+    items: [
+      { name: "Socket.io", icon: SiSocketdotio },
+      { name: "ZegoCloud", icon: null }, // no official Simple Icon in react-icons/si
+      { name: "Stripe", icon: SiStripe },
+      { name: "PayPal", icon: SiPaypal },
+      { name: "Redis", icon: SiRedis },
+    ],
+  },
+  {
+    category: "Testing & Collaboration",
+    items: [
+      { name: "Jest", icon: SiJest },
+      { name: "Jira", icon: SiJira },
+      { name: "ClickUp", icon: SiClickup },
+      { name: "Asana", icon: SiAsana },
+    ],
+  },
 ];
 
 
@@ -117,8 +231,8 @@ const skills = [
           </div>
         </div>
         {/* My Skills */}
-        <h2 className="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
-        <div className="row gx-5">
+        {/* <h2 className="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2> */}
+        {/* <div className="row gx-5">
           {skills.length > 0 &&
             skills.map((skill, index) => (
               <div className="col-md-6 wow fadeInUp" key={index}>
@@ -138,7 +252,33 @@ const skills = [
                 </div>
               </div>
             ))}
-        </div>
+        </div> */}
+        <h2 className="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
+
+          <div className="row gx-5">
+            {skillCategories.map((group, index) => (
+              <div className="col-lg-6 wow fadeInUp my-4" key={index}>
+                <h3 className="text-5 fw-600 mb-3">{group.category}</h3>
+
+                <div className="d-flex flex-wrap gap-2 mb-4">
+                  {group.items.map((skill, i) => {
+                    const Icon = skill.icon;
+                    return (
+                      <span
+                        key={i}
+                        className="badge bg-light text-dark border px-3 py-2 d-inline-flex align-items-center gap-2"
+                        style={{ borderRadius: "999px", fontWeight: 500 }}
+                      >
+                        {Icon ? <Icon size={16} /> : null}
+                        {skill.name}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
         <p className="text-center mt-5 wow fadeInUp">
           <a
             className="btn btn-outline-dark shadow-none rounded-0"

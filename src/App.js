@@ -127,7 +127,7 @@ function App() {
             <Portfolio></Portfolio>
             <CallToAction></CallToAction>
             <FAQs></FAQs>
-            <Testimonials></Testimonials>
+            {/* <Testimonials></Testimonials> */}
             <Contact></Contact>
           </div>
           <Footer handleNavClick={handleNavClick}></Footer>
