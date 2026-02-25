@@ -76,3 +76,5 @@ temp/
 
 # --- Misc ---
 *.local
+.vercel
+.env*.local

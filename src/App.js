@@ -4,7 +4,6 @@ import AboutUs from "./components/About";
 import Services from "./components/Services";
 import Resume from "./components/Resume";
 import Portfolio from "./components/Portfolio";
-import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
@@ -28,6 +27,7 @@ import BottomHeaderVideoBgIntro from "./components/themes/bottomHeader/IntroVide
 import StandardMenuDefaultIntro from "./components/themes/StandardMenu/IntroDefault";
 import StandardMenuImgBgIntro from "./components/themes/StandardMenu/IntroImageBg";
 import StandardMenuVideoBgIntro from "./components/themes/StandardMenu/IntroVideoBg";
+import ChatWidget from "./components/chat/ChatWidget";
 
 function App() {
   const appliedTheme = appliedConfig.appliedTheme;
@@ -145,6 +145,7 @@ function App() {
             <i className="fas fa-arrow-up"></i>
           </span>
         </Tooltip>
+        <ChatWidget />
       </div>
     </>
   );
