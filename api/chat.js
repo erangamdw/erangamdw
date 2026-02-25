@@ -7,7 +7,7 @@ const MAX_UPSTREAM_ATTEMPTS = 3;
 const EMPTY_REPLY_FALLBACK =
   "I could not generate a full response this time. Please ask again about Eranga's experience, projects, or technical skills.";
 const OUT_OF_SCOPE_REPLY =
-  "I'm Eranga's AI assistant, and I'm here only for Eranga-related questions. You can ask about my experience, projects, technical skills, or availability.";
+  "I'm Eranga's AI assistant, and I'm here only for Eranga-related questions.";
 const SCOPE_KEYWORDS = [
   "eranga",
   "wasaba",
@@ -205,7 +205,22 @@ const isInScopeByIntent = (text) => {
   return (
     /\b(about yourself|about you|introduce yourself|who are you|what do you do)\b/.test(
       normalizedText
-    ) || /\b(your background|your expertise|your skills)\b/.test(normalizedText)
+    ) ||
+    /\b(your background|your expertise|your skills)\b/.test(normalizedText) ||
+    /\b(who is eranga|who is wasaba|tell me about eranga|know about eranga|about eranga)\b/.test(
+      normalizedText
+    )
+  );
+};
+
+const isProfilePronounIntent = (text) => {
+  const normalizedText = sanitizeVisibleText(String(text || "").toLowerCase());
+  if (!normalizedText) {
+    return false;
+  }
+
+  return /\b(tell me about him|know about him|i want to know about him|i would like to know about him|who is he)\b/.test(
+    normalizedText
   );
 };
 
@@ -220,8 +235,28 @@ const isLikelyFollowUp = (text) => {
   );
 };
 
+const isContextualPronounQuestion = (text) => {
+  const normalizedText = sanitizeVisibleText(String(text || "").toLowerCase());
+  if (!normalizedText) {
+    return false;
+  }
+
+  return /\b(he|him|his)\b/.test(normalizedText) &&
+    /\b(can do|do|does|work|skills|experience|background|projects|expertise|profile|about)\b/.test(
+      normalizedText
+    );
+};
+
 const isErangaScopeQuestion = (userText, historyText) => {
   if (hasScopeKeywords(userText) || isInScopeByIntent(userText)) {
+    return true;
+  }
+
+  if (isProfilePronounIntent(userText)) {
+    return true;
+  }
+
+  if (isContextualPronounQuestion(userText) && hasScopeKeywords(historyText)) {
     return true;
   }
 

@@ -15,7 +15,7 @@ const defaultAssistantMessage = {
   id: "welcome",
   role: "assistant",
   content:
-    "Hi, I am Eranga's AI assistant. I can answer in Eranga's voice about my projects, skills, experience, and availability.",
+    "Hi, I am Eranga's AI assistant. I can answer in Eranga's voice about my projects, skills, experience, LLM/AI engineering expertise, and availability.",
 };
 
 const normalizeStoredMessages = (loadedMessages) => {
