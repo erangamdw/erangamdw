@@ -413,16 +413,6 @@ module.exports = async (req, res) => {
     return jsonResponse(res, 400, { error: "Message is required" });
   }
 
-  const shouldApplyScopeGuard = history.length === 0;
-
-  if (shouldApplyScopeGuard && !isErangaScopeQuestion(userMessage, historyText)) {
-    return jsonResponse(res, 200, {
-      reply: OUT_OF_SCOPE_REPLY,
-      model: "scope-guard",
-      guarded: true,
-    });
-  }
-
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
