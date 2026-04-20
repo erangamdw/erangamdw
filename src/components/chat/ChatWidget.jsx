@@ -89,6 +89,7 @@ const ChatWidget = () => {
   const [messages, setMessages] = useState(initialMessages);
 
   const scrollRef = useRef(null);
+  const inputRef = useRef(null);
   const streamTimeoutRef = useRef(null);
   const isUnmountedRef = useRef(false);
 
@@ -107,6 +108,14 @@ const ChatWidget = () => {
 
     scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
   }, [messages, isOpen, isSending]);
+
+  useEffect(() => {
+    if (!isOpen || !inputRef.current) {
+      return;
+    }
+
+    inputRef.current.focus();
+  }, [isOpen]);
 
   useEffect(() => {
     isUnmountedRef.current = false;
@@ -196,6 +205,9 @@ const ChatWidget = () => {
     setInput("");
     setError("");
     setIsSending(true);
+    window.requestAnimationFrame(() => {
+      inputRef.current?.focus();
+    });
 
     try {
       const response = await sendChatMessage({
@@ -211,6 +223,7 @@ const ChatWidget = () => {
       setError(requestError.message || "I could not respond right now.");
     } finally {
       setIsSending(false);
+      inputRef.current?.focus();
     }
   };
 
@@ -255,13 +268,13 @@ const ChatWidget = () => {
 
             <form className="chat-widget__form" onSubmit={submitMessage}>
               <input
+                ref={inputRef}
                 className="chat-widget__input"
                 type="text"
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
                 placeholder="Ask only about Eranga's experience, skills, projects, or availability..."
                 maxLength={1200}
-                disabled={isSending}
                 aria-label="Type your message"
               />
               <button
