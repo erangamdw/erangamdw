@@ -210,23 +210,6 @@ const FullScreenHeader = ({ textWhite }) => {
                     style={{ cursor: "pointer" }}
                     activeClass="active"
                     spy
-                    to="testimonial"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsNavModalClose(true);
-                    }}
-                  >
-                    Client Speak
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className="nav-link "
-                    smooth="easeInOutQuint"
-                    duration={scrollDuration}
-                    style={{ cursor: "pointer" }}
-                    activeClass="active"
-                    spy
                     to="contact"
                     onClick={(e) => {
                       e.preventDefault();
@@ -238,58 +221,25 @@ const FullScreenHeader = ({ textWhite }) => {
                 </li>
               </ul>
               <ul className="social-icons social-icons-light social-icons-lg social-icons-light d-inline-flex mt-4">
-                <li className="social-icons-twitter">
-                  <Tooltip text="Twitter" placement="top">
+                <li className="social-icons-github">
+                  <Tooltip text="GitHub" placement="top">
                     <a
-                      href="https://twitter.com/erangamdw/"
+                      href="https://github.com/erangamdw"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <i className="fab fa-twitter" />
-                    </a>
-                  </Tooltip>
-                </li>
-                <li className="social-icons-facebook">
-                  <Tooltip text="Facebook" placement="top">
-                    <a
-                      href="http://www.facebook.com/erangamdw/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fab fa-facebook" />
-                    </a>
-                  </Tooltip>
-                </li>
-                <li className="social-icons-instagram">
-                  <Tooltip text="Instagram" placement="top">
-                    <a
-                      href="http://www.instagram.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fab fa-instagram" />
+                      <i className="fab fa-github" />
                     </a>
                   </Tooltip>
                 </li>
                 <li className="social-icons-linkedin">
-                  <Tooltip text="Linkedin" placement="top">
+                  <Tooltip text="LinkedIn" placement="top">
                     <a
-                      href="http://www.linkedin.com/"
+                      href="https://www.linkedin.com/in/eranga-mdw/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <i className="fab fa-linkedin-in" />
-                    </a>
-                  </Tooltip>
-                </li>
-                <li className="social-icons-dribbble">
-                  <Tooltip text="Dribbble" placement="top">
-                    <a
-                      href="http://www.dribbble.com/erangamdw/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fab fa-dribbble" />
                     </a>
                   </Tooltip>
                 </li>

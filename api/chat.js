@@ -7,13 +7,36 @@ const MAX_UPSTREAM_ATTEMPTS = 3;
 const EMPTY_REPLY_FALLBACK =
   "I could not generate a full response this time. Please ask again about Eranga's experience, projects, or technical skills.";
 const OUT_OF_SCOPE_REPLY =
-  "I'm Eranga's AI assistant, and I'm here only for Eranga-related questions.";
-const SCOPE_KEYWORDS = [
+  "I only answer questions about Eranga. Please ask about his experience, skills, projects, education, or availability.";
+const PERSON_KEYWORDS = [
   "eranga",
   "wasaba",
   "madapathage",
+  "you",
+  "your",
+  "yourself",
+];
+const PROFILE_KEYWORDS = [
   "experience",
   "project",
+  "projects",
+  "compatible1",
+  "zulu courier",
+  "fan budget",
+  "instaleaf",
+  "hirelens",
+  "hirelens ai",
+  "docmind",
+  "docmind ai",
+  "eventsx",
+  "cinesync",
+  "dogota",
+  "onlineaccounting",
+  "syscolabs",
+  "efito",
+  "layoutindex",
+  "iucn",
+  "emp",
   "portfolio",
   "resume",
   "cv",
@@ -29,6 +52,39 @@ const SCOPE_KEYWORDS = [
   "full stack",
   "software engineer",
   "developer",
+  "fastapi",
+  "flask",
+  "react",
+  "next.js",
+  "node.js",
+  "node",
+  "python",
+  "flutter",
+  "react native",
+  "mongodb",
+  "mysql",
+  "postgresql",
+  "redis",
+  "pinecone",
+  "qdrant",
+  "chroma",
+  "langchain",
+  "openai",
+  "hugging face",
+  "tensorflow",
+  "pytorch",
+  "scikit-learn",
+  "aws",
+  "docker",
+  "socket.io",
+  "zegocloud",
+  "jwt",
+  "rbac",
+  "api",
+  "rest api",
+  "microservices",
+  "semantic search",
+  "prompt engineering",
   "availability",
   "hire",
   "contact",
@@ -38,18 +94,6 @@ const SCOPE_KEYWORDS = [
   "london",
   "linkedin",
   "github",
-  "react",
-  "next.js",
-  "node",
-  "express",
-  "python",
-  "flutter",
-  "react native",
-  "mongodb",
-  "mysql",
-  "postgresql",
-  "aws",
-  "docker",
   "llm",
   "llms",
   "ai",
@@ -66,29 +110,50 @@ const SYSTEM_PROMPT = `You are the AI assistant for Eranga (Wasaba Eranga Madapa
 Identity and profile facts:
 - Name: Wasaba Eranga Madapathage Don (Eranga)
 - Role: Software Engineer & AI Enthusiast
-- Experience: 7 years
+- Experience: 6+ years
 - Location: London, United Kingdom
 - Email: erangamdw@gmail.com
 - Phone: +44 7542 135343
+- Right to work: United Kingdom
+- Professional focus: backend-focused full-stack software engineering, applied AI, LLM integrations, and RAG-powered systems
 - Education:
   - MSc in Data Science & Artificial Intelligence (Edge Hill University, UK, 2024-2025)
   - BSc (Hons) Computer Science (Software Engineering), First Class (University of Wolverhampton, UK, 2022-2023)
   - HND in Computing (Software Engineering) (Pearson BTEC, Sri Lanka, 2018-2020)
 - Work experience:
   - Software Engineer at Efito Solutions (Aug 2023 - Sep 2024)
-  - Software Engineer & Technical Support Engineer at LayoutIndex (May 2021 - Jun 2023)
+  - Software Engineer & Technical Support Engineer at LAYOUTindex (May 2021 - Jun 2023)
   - Associate Software Engineer at EMP (Feb 2018 - Mar 2021)
   - IT Intern at IUCN Sri Lanka (Aug 2017 - Jan 2018)
-- Key expertise: LLM application development, AI engineering, Generative AI, RAG architecture, and production-ready full-stack software development.
-- Skills include React, Next.js, Node.js, Express, Python, Flutter, React Native, MongoDB, MySQL, PostgreSQL, TensorFlow, PyTorch, AWS, Docker, and LLM/RAG engineering.
+- Key expertise:
+  - Backend engineering with Node.js, Python, FastAPI, Express.js, and Flask
+  - Full-stack delivery across React, Next.js, React Native, and Flutter
+  - Secure REST APIs, JWT auth, RBAC, real-time systems, and scalable backend architecture
+  - Applied AI including OpenAI integrations, LangChain, RAG, semantic search, prompt engineering, and intelligent automation
+  - Cloud and delivery tooling including AWS, Docker, GitHub Actions, GitLab CI, and Git workflows
+- Core skills include:
+  - Languages: Python, JavaScript, TypeScript, Dart
+  - Databases: MongoDB, MySQL, PostgreSQL, SQLite, Redis
+  - Vector stores: Pinecone, Chroma, Qdrant
+  - AI/ML: TensorFlow, PyTorch, Scikit-learn, Hugging Face, OpenAI APIs, LangChain
+  - Systems: RESTful API design, microservices, async services, scalability and performance optimisation
+- Selected project and product experience:
+  - Compatible1: integrated LLM-powered features using OpenAI APIs, AI-assisted workflows, recommendation logic, and real-time communication features
+  - Zulu Courier and Fan Budget: built and scaled full-stack and mobile product features, APIs, and delivery workflows
+  - HireLens AI: built a full-stack AI hiring platform using FastAPI, Next.js, LangChain, and RAG over CVs and job descriptions
+  - DocMind AI: built a document intelligence platform using FastAPI, LangChain, Qdrant, semantic search, and LLM-powered responses
+  - InstaLeaf: AI-powered plant disease classification project completed during MSc work
+  - Smart Brain Health App: AI-driven brain tumour detection mobile application and related IEEE publication
+- Achievements:
+  - IEEE Xplore publication: "Smart Health App for Identifying Brain Tumors" at the 2023 IEEE 8th International Conference for Convergence in Technology (I2CT)
 
 Style:
-- Write in first person as Eranga for experience, skills, projects, and career answers.
-- Keep subtle AI transparency by occasionally phrasing as "I'm Eranga's AI assistant sharing his profile details."
+- Answer about Eranga clearly and directly. Prefer third person unless the user explicitly asks for a first-person profile summary.
+- Keep AI transparency clear. It should be obvious that you are Eranga's AI assistant, not Eranga himself.
 - Do not pretend to have real-time personal awareness beyond the provided profile context.
 - Be concise, practical, friendly, and clearly useful.
 - Keep most answers under 120 words unless detail is requested.
-- For job/project opportunities, suggest contacting me via email.
+- For job/project opportunities, suggest contacting Eranga via email.
 - If the question is not about Eranga, reply exactly with: "${OUT_OF_SCOPE_REPLY}"
 
 Safety and integrity:
@@ -193,7 +258,16 @@ const hasScopeKeywords = (text) => {
     return false;
   }
 
-  return SCOPE_KEYWORDS.some((keyword) => normalizedText.includes(keyword));
+  return PROFILE_KEYWORDS.some((keyword) => normalizedText.includes(keyword));
+};
+
+const hasPersonReference = (text) => {
+  const normalizedText = sanitizeVisibleText(String(text || "").toLowerCase());
+  if (!normalizedText) {
+    return false;
+  }
+
+  return PERSON_KEYWORDS.some((keyword) => normalizedText.includes(keyword));
 };
 
 const isInScopeByIntent = (text) => {
@@ -207,6 +281,9 @@ const isInScopeByIntent = (text) => {
       normalizedText
     ) ||
     /\b(your background|your expertise|your skills)\b/.test(normalizedText) ||
+    /\b(your projects|your education|your experience|your work|your availability|your contact|your portfolio|your resume|your cv)\b/.test(
+      normalizedText
+    ) ||
     /\b(who is eranga|who is wasaba|tell me about eranga|know about eranga|about eranga)\b/.test(
       normalizedText
     )
@@ -248,7 +325,11 @@ const isContextualPronounQuestion = (text) => {
 };
 
 const isErangaScopeQuestion = (userText, historyText) => {
-  if (hasScopeKeywords(userText) || isInScopeByIntent(userText)) {
+  if (isInScopeByIntent(userText)) {
+    return true;
+  }
+
+  if (hasPersonReference(userText) && hasScopeKeywords(userText)) {
     return true;
   }
 
@@ -256,11 +337,21 @@ const isErangaScopeQuestion = (userText, historyText) => {
     return true;
   }
 
-  if (isContextualPronounQuestion(userText) && hasScopeKeywords(historyText)) {
+  if (
+    isContextualPronounQuestion(userText) &&
+    (hasPersonReference(historyText) || hasScopeKeywords(historyText))
+  ) {
     return true;
   }
 
-  if (isLikelyFollowUp(userText) && hasScopeKeywords(historyText)) {
+  if (
+    isLikelyFollowUp(userText) &&
+    (hasPersonReference(historyText) || hasScopeKeywords(historyText))
+  ) {
+    return true;
+  }
+
+  if (hasPersonReference(userText) && hasPersonReference(historyText)) {
     return true;
   }
 

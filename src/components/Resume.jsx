@@ -1,6 +1,10 @@
 import React from "react";
-import resumeFile from "../documents/resume.pdf";
+import resumeFile from "../documents/Eranga_CV.pdf";
 import {
+  SiAmazonapigateway,
+  SiAmazoncloudwatch,
+  SiAmazonec2,
+  SiAmazons3,
   SiReact,
   SiNextdotjs,
   SiRedux,
@@ -12,8 +16,6 @@ import {
   SiPython,
   SiFastapi,
   SiFlask,
-  SiPhp,
-  SiLaravel,
   SiMongodb,
   SiMysql,
   SiPostgresql,
@@ -23,10 +25,18 @@ import {
   SiPytorch,
   SiScikitlearn,
   SiHuggingface,
+  SiJavascript,
+  SiLangchain,
+  SiOpenai,
+  SiPytest,
+  SiSap,
   SiAmazonwebservices,
+  SiAwslambda,
+  SiBitbucket,
   SiDocker,
   SiGithubactions,
   SiGit,
+  SiGitlab,
   SiSocketdotio,
   SiStripe,
   SiPaypal,
@@ -37,57 +47,80 @@ import {
   SiAsana,
   SiFlutter,
   SiDart,
+  SiTypescript,
 } from "react-icons/si";
+import {
+  FaCodeBranch,
+  FaComments,
+  FaCogs,
+  FaCube,
+  FaDatabase,
+  FaDraftingCompass,
+  FaExchangeAlt,
+  FaHeadset,
+  FaLink,
+  FaNetworkWired,
+  FaPlug,
+  FaProjectDiagram,
+  FaRobot,
+  FaRoute,
+  FaSearch,
+  FaSitemap,
+  FaTachometerAlt,
+  FaVial,
+  FaVials,
+  FaVideo,
+} from "react-icons/fa";
 
 
 const Resume = () => {
   const educationDetails = [
-  {
-    yearRange: "2024 - 2025",
-    title: "MSc in Data Science & Artificial Intelligence",
-    place: "Edge Hill University, United Kingdom",
-    desc: "Specialized in Deep Learning, Machine Learning, Natural Language Processing, and AI systems development. Completed final project 'InstaLeaf: AI-Powered Plant Disease Classification'.",
-  },
-  {
-    yearRange: "2022 - 2023",
-    title: "BSc (Hons) in Computer Science (Software Engineering) – First Class",
-    place: "University of Wolverhampton, United Kingdom",
-    desc: "Focused on full-stack software development, web and mobile technologies, and intelligent systems design.",
-  },
-  {
-    yearRange: "2018 - 2020",
-    title: "Higher National Diploma in Computing (Software Engineering)",
-    place: "Pearson BTEC, Sri Lanka",
-    desc: "Gained strong foundation in software engineering, databases, and system design. Completed multiple academic and freelance projects.",
-  },
-];
+    {
+      yearRange: "2024 - 2025",
+      title: "MSc in Data Science & Artificial Intelligence",
+      place: "Edge Hill University, Lancashire, United Kingdom",
+      desc: "Focused on applied AI systems, machine learning, deep learning, and NLP. Final project: InstaLeaf, an AI-powered plant disease classification system.",
+    },
+    {
+      yearRange: "2022 - 2023",
+      title: "BSc (Hons) in Computer Science (Software Engineering) - First Class",
+      place: "University of Wolverhampton, United Kingdom",
+      desc: "Built a strong foundation in software engineering, full-stack development, and modern system design.",
+    },
+    {
+      yearRange: "2018 - 2020",
+      title: "Higher National Diploma in Computing (Software Engineering)",
+      place: "Pearson BTEC, Sri Lanka",
+      desc: "Studied core software engineering, databases, and application development across academic and practical projects.",
+    },
+  ];
 
-const experienceDetails = [
-  {
-    yearRange: "Aug 2023 – Sep 2024",
-    title: "Software Engineer",
-    place: "Efito Solutions (Pvt) Ltd, Sri Lanka",
-    desc: "Led development of large-scale web and mobile applications using the MERN stack and Flutter. Built systems including Zulu Courier and Fan Budget platforms, streamlining delivery workflows and improving operational efficiency by 30%. Developed scalable REST APIs with Node.js and Express.js supporting 10K+ users with sub-200ms response times. Integrated Socket.io and ZegoCloud for real-time communication and AI-enhanced call management. Mentored and trained junior developers, improving team productivity and code quality.",
-  },
-  {
-    yearRange: "May 2021 – Jun 2023",
-    title: "Software Engineer & Technical Support Engineer",
-    place: "LayoutIndex, Sri Lanka",
-    desc: "Engineered and maintained applications using React.js, React Native, Node.js, and PHP across projects such as EventsX, CineSync, Dogota, Syscolabs Web, and OnlineAccounting. Worked directly with UK-based clients, providing enterprise-level technical support, diagnosing complex infrastructure and software issues, and ensuring 99% system uptime while balancing development and support responsibilities.",
-  },
-  {
-    yearRange: "Feb 2018 – Mar 2021",
-    title: "Associate Software Engineer",
-    place: "EMP (Pvt) Ltd, Sri Lanka",
-    desc: "Contributed to web application development while supporting and enhancing ERP systems using SAP and MS SQL Server. Worked on internal web-based tools and system integrations, alongside workflow optimisations that improved efficiency by 15%. Maintained IT infrastructure including servers, Active Directory, DNS/DHCP, and backups, and provided day-to-day technical support to ensure system reliability.",
-  },
-  {
-    yearRange: "Aug 2017 – Jan 2018",
-    title: "IT Intern",
-    place: "IUCN Sri Lanka",
-    desc: "Provided IT helpdesk support, troubleshooting hardware, software, and network-related issues. Assisted with Windows server maintenance and system administration tasks, gaining hands-on experience in enterprise IT operations and networking fundamentals.",
-  },
-];
+  const experienceDetails = [
+    {
+      yearRange: "Aug 2023 - Sep 2024",
+      title: "Software Engineer",
+      place: "Efito Solutions (Pvt) Ltd, Sri Lanka",
+      desc: "Built and maintained backend services with Python and Node.js for production applications serving 10K+ users. Delivered secure REST APIs, RBAC-based authentication, real-time communication features, and AI-assisted workflows, while improving API performance to below 200ms and mentoring junior developers.",
+    },
+    {
+      yearRange: "May 2021 - Jun 2023",
+      title: "Software Engineer & Technical Support Engineer",
+      place: "LAYOUTindex UK Ltd, Stevenage (SL Development Centre)",
+      desc: "Developed backend and full-stack applications with Python, Node.js, React.js, and React Native. Worked on systems delivered to UK-based clients, designed secure APIs, resolved infrastructure and database issues, and helped maintain around 99% uptime across critical platforms.",
+    },
+    {
+      yearRange: "Feb 2018 - Mar 2021",
+      title: "Associate Software Engineer",
+      place: "EMP (Pvt) Ltd, Sri Lanka",
+      desc: "Supported ERP enhancements and internal business systems using SAP, MS SQL Server, Node.js, and backend web services. Improved workflow efficiency, maintained core IT infrastructure, and provided day-to-day technical support across servers, networking, and business applications.",
+    },
+    {
+      yearRange: "Aug 2017 - Jan 2018",
+      title: "IT Intern",
+      place: "IUCN Sri Lanka",
+      desc: "Provided IT support for hardware, software, and networking issues while assisting with system administration and Windows server maintenance.",
+    },
+  ];
 
 
 
@@ -104,10 +137,21 @@ const experienceDetails = [
 // ];
 const skillCategories = [
   {
+    category: "Programming",
+    items: [
+      { name: "Python", icon: SiPython },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Dart", icon: SiDart },
+    ],
+  },
+  {
     category: "Frontend",
     items: [
       { name: "React.js", icon: SiReact },
       { name: "Next.js", icon: SiNextdotjs },
+      { name: "React Native", icon: SiReact },
+      { name: "Flutter", icon: SiFlutter },
       { name: "Redux / Redux Toolkit", icon: SiRedux },
       { name: "Tailwind CSS", icon: SiTailwindcss },
       { name: "Bootstrap", icon: SiBootstrap },
@@ -119,76 +163,106 @@ const skillCategories = [
     items: [
       { name: "Node.js", icon: SiNodedotjs },
       { name: "Express.js", icon: SiExpress },
-      { name: "Python", icon: SiPython },
       { name: "FastAPI", icon: SiFastapi },
       { name: "Flask", icon: SiFlask },
-      { name: "PHP", icon: SiPhp },
-      { name: "Laravel", icon: SiLaravel },
+      { name: "REST API Design", icon: FaPlug },
+      { name: "Microservices", icon: FaProjectDiagram },
+      { name: "Async Services", icon: FaExchangeAlt },
     ],
   },
   {
-    category: "Mobile",
-    items: [
-      { name: "Flutter", icon: SiFlutter },
-      { name: "Dart", icon: SiDart },
-      { name: "React Native", icon: SiReact },
-    ],
-  },
-  {
-    category: "Databases",
+    category: "Databases & Vector Stores",
     items: [
       { name: "MongoDB", icon: SiMongodb },
       { name: "MySQL", icon: SiMysql },
       { name: "PostgreSQL", icon: SiPostgresql },
       { name: "SQLite", icon: SiSqlite },
       { name: "Firebase", icon: SiFirebase },
+      { name: "Redis", icon: SiRedis },
+      { name: "Pinecone", icon: FaDatabase },
+      { name: "Chroma", icon: FaDatabase },
+      { name: "Qdrant", icon: FaDatabase },
     ],
   },
   {
-    category: "AI / Machine Learning",
+    category: "AI & LLMs",
     items: [
-      { name: "Scikit-learn", icon: SiScikitlearn },
+      { name: "OpenAI APIs", icon: SiOpenai },
+      { name: "Agentic AI Systems", icon: FaRobot },
+      { name: "LangChain", icon: SiLangchain },
+      { name: "Hugging Face Transformers", icon: SiHuggingface },
+      { name: "Hugging Face Hub", icon: SiHuggingface },
+      { name: "Prompt Engineering", icon: FaComments },
+      { name: "RAG Pipelines", icon: FaRoute },
+      { name: "Semantic Search", icon: FaSearch },
+      { name: "Context-Aware AI Systems", icon: FaCogs },
+      { name: "AI Workflow Automation", icon: FaCogs },
+    ],
+  },
+  {
+    category: "Machine Learning",
+    items: [
       { name: "TensorFlow", icon: SiTensorflow },
       { name: "PyTorch", icon: SiPytorch },
-    ],
-  },
-  {
-    category: "LLMs / Generative AI",
-    items: [
-      { name: "Prompt Engineering", icon: null },
-      { name: "LLM Application Development", icon: null },
-      { name: "Hugging Face Transformers", icon: SiHuggingface },
-      { name: "RAG (Retrieval-Augmented Generation)", icon: null },
-      { name: "Embeddings & Vector Search", icon: null },
-      { name: "Inference Pipelines", icon: null },
+      { name: "Scikit-learn", icon: SiScikitlearn },
+      { name: "NLP", icon: FaComments },
     ],
   },
   {
     category: "Cloud / DevOps",
     items: [
       { name: "AWS", icon: SiAmazonwebservices },
+      { name: "Lambda", icon: SiAwslambda },
+      { name: "EC2", icon: SiAmazonec2 },
+      { name: "S3", icon: SiAmazons3 },
+      { name: "API Gateway", icon: SiAmazonapigateway },
+      { name: "CloudWatch", icon: SiAmazoncloudwatch },
       { name: "Docker", icon: SiDocker },
-      { name: "CI/CD (GitHub Actions)", icon: SiGithubactions },
+      { name: "GitHub Actions", icon: SiGithubactions },
+      { name: "GitLab CI", icon: SiGitlab },
       { name: "Git", icon: SiGit },
+      { name: "GitLab", icon: SiGitlab },
+      { name: "Bitbucket", icon: SiBitbucket },
     ],
   },
   {
-    category: "Integrations & Real-Time",
+    category: "APIs, Integrations & Real-Time",
     items: [
       { name: "Socket.io", icon: SiSocketdotio },
-      { name: "ZegoCloud", icon: null }, // no official icon
+      { name: "ZegoCloud", icon: FaVideo },
       { name: "Stripe", icon: SiStripe },
       { name: "PayPal", icon: SiPaypal },
-      { name: "Redis", icon: SiRedis },
     ],
   },
   {
     category: "Testing & Collaboration",
     items: [
       { name: "Jest", icon: SiJest },
+      { name: "PyTest", icon: SiPytest },
+      { name: "Unit Testing", icon: FaVial },
+      { name: "Integration Testing", icon: FaVials },
       { name: "Jira", icon: SiJira },
       { name: "ClickUp", icon: SiClickup },
       { name: "Asana", icon: SiAsana },
+    ],
+  },
+  {
+    category: "System Design",
+    items: [
+      { name: "RESTful Architecture", icon: FaLink },
+      { name: "API Design", icon: FaDraftingCompass },
+      { name: "Modular Monoliths", icon: FaCube },
+      { name: "Microservices Architecture", icon: FaSitemap },
+      { name: "Scalability & Performance Optimization", icon: FaTachometerAlt },
+    ],
+  },
+  {
+    category: "Additional",
+    items: [
+      { name: "Technical Support", icon: FaHeadset },
+      { name: "ERP (SAP)", icon: SiSap },
+      { name: "Networking", icon: FaNetworkWired },
+      { name: "Code Reviews", icon: FaCodeBranch },
     ],
   },
 ];
@@ -203,7 +277,7 @@ const skillCategories = [
           <span className="bg-primary text-dark px-2">Resume</span>
         </p>
         <h2 className="text-10 fw-600 text-center mb-5 wow fadeInUp">
-          A summary of My Resume
+          Experience, Education, and Technical Skills
         </h2>
         {/* Heading end*/}
         <div className="row g-5 mt-5">

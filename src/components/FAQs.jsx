@@ -4,34 +4,34 @@ import Accordion from "react-bootstrap/Accordion";
 const FAQs = () => {
   const faqsData = [
     {
-      question: "Who are you as a software engineer?",
+      question: "What kind of software engineer are you?",
       answer:
-        "I’m a backend-focused full stack software engineer with over 5 years of professional experience building scalable web and mobile applications. My core strength is backend development with Node.js, but I’m comfortable delivering complete end-to-end solutions including frontend and mobile apps.",
+        "I’m a backend-focused full-stack software engineer with 6+ years of experience building web, mobile, and AI-powered applications. My strongest area is backend engineering with Node.js and Python, but I’m also comfortable delivering end-to-end solutions across frontend, APIs, databases, and cloud-connected systems.",
     },
     {
-      question: "What roles are you currently looking for?",
+      question: "What technologies do you work with most?",
       answer:
-        "I’m primarily looking for backend-focused full stack roles, especially involving Node.js and API-driven systems. I’m also open to full stack roles, mobile development positions, and AI-related roles, particularly those involving Large Language Models (LLMs) and applied AI systems.",
+        "I work most often with Node.js, Python, React, Next.js, Flutter, FastAPI, Express, MongoDB, PostgreSQL, and AWS. I also work with OpenAI APIs, LangChain, RAG pipelines, semantic search, and other tools used to build practical AI and LLM-powered applications.",
     },
     {
-      question: "What is your strongest technical skill set?",
+      question: "Do you build full-stack products end to end?",
       answer:
-        "My strongest skills are in backend development using Node.js, Express, REST APIs, real-time systems with Socket.io, authentication, payments (Stripe), and database design with MongoDB and SQL. I focus heavily on clean architecture, performance, and maintainability.",
+        "Yes. I can take a product from frontend interface to backend services, database design, API development, integrations, and deployment. While my main strength is backend systems, I regularly build complete full-stack solutions and work across the full delivery lifecycle.",
+    },
+    {
+      question: "Do you work with AI and LLM applications?",
+      answer:
+        "Yes. My recent work includes LLM integrations, Retrieval-Augmented Generation (RAG), semantic search, prompt engineering, and AI workflow automation. I focus on building AI features that are useful in production, not just prototypes, and combine them with solid software engineering practices.",
     },
     {
       question: "Do you have mobile development experience?",
       answer:
-        "Yes. I have hands-on experience developing cross-platform mobile applications using Flutter. I’ve built and maintained production mobile apps that integrate with backend APIs, real-time services, and cloud infrastructure.",
+        "Yes. I have hands-on experience building cross-platform mobile applications with Flutter and React Native. I’ve worked on production mobile apps connected to secure backend APIs, real-time communication services, and cloud-based systems.",
     },
     {
-      question: "Do you work with AI or Large Language Models (LLMs)?",
+      question: "What opportunities are you open to?",
       answer:
-        "Yes. I completed an MSc in Data Science & Artificial Intelligence, where my final research project focused on deep learning and explainable AI. I’m currently expanding my practical work in AI, particularly LLM-based applications, applied machine learning, and real-world AI system integration.",
-    },
-    {
-      question: "Are you open to UK-based opportunities?",
-      answer:
-        "Yes. I’m actively seeking UK-based roles and am open to on-site, hybrid, or remote opportunities. I’m especially interested in teams that value strong engineering practices, continuous learning, and real-world impact.",
+        "I’m open to backend-focused full-stack software engineering roles, AI engineering roles, and opportunities involving LLM-powered systems or applied AI products. I’m also open to UK-based on-site, hybrid, or remote opportunities where I can contribute to real product and platform delivery.",
     },
   ];
 

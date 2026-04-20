@@ -2,12 +2,12 @@ export const erangaProfile = {
   fullName: "Wasaba Eranga Madapathage Don",
   preferredName: "Eranga",
   title: "Software Engineer & AI Enthusiast",
-  yearsOfExperience: 7,
+  yearsOfExperience: 6,
   location: "London, United Kingdom",
   email: "erangamdw@gmail.com",
   phone: "+44 7542 135343",
   summary:
-    "Software Engineer with 7 years of experience building full-stack web and mobile applications and AI-driven solutions.",
+    "Software Engineer with 6+ years of experience building backend and full-stack applications, with recent focus on LLM integrations, RAG, and intelligent automation.",
   education: [
     {
       period: "2024 - 2025",

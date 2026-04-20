@@ -5,6 +5,20 @@ import ModalVideo from "react-modal-video";
 
 const ProjectDetailsModal = ({ projectDetails, setIsOpen }) => {
   const sliderRef = useRef();
+  const isCompactProject =
+    projectDetails?.imageClassName === "portfolio-image--compact";
+  const modalImageClassName = `img-fluid project-details-modal__image ${
+    isCompactProject
+      ? "project-details-modal__image--compact"
+      : ""
+  } ${projectDetails?.modalImageClassName || ""}`.trim();
+  const contentRowClassName = `row g-4 ${
+    isCompactProject ? "project-details-modal__row--compact" : ""
+  }`.trim();
+  const mediaColumnClassName = isCompactProject
+    ? "col-lg-6 col-xl-5 project-details-modal__media-col--compact"
+    : "col-md-7";
+  const detailsColumnClassName = isCompactProject ? "col-lg-6 col-xl-7" : "col-md-5";
 
   const types = {
     IMAGE: "image",
@@ -75,14 +89,18 @@ const ProjectDetailsModal = ({ projectDetails, setIsOpen }) => {
       {projectDetails?.type === types.DOCUMENT && (
         <div className="project-details-modal">
           <div
-            className="modal fade bg-dark-1 show"
-            style={{ display: "block" }}
+            className="modal fade show"
+            style={{
+              display: "block",
+              backgroundColor: "rgba(8, 12, 18, 0.55)",
+              backdropFilter: "blur(4px)",
+            }}
             tabIndex={-1}
             aria-hidden="true"
             onClick={() => setIsOpen(false)}
           >
             <div
-              className="modal-dialog modal-xl"
+              className="modal-dialog modal-xl project-details-modal__dialog"
               onClick={(e) => e.stopPropagation()}
             >
               <div className={"modal-content rounded-0"}>
@@ -96,12 +114,12 @@ const ProjectDetailsModal = ({ projectDetails, setIsOpen }) => {
                     <h2 className={"text-6 fw-600 text-center mb-4"}>
                       {projectDetails?.title}
                     </h2>
-                    <div className="row g-4">
-                      <div className="col-md-7">
+                    <div className={contentRowClassName}>
+                      <div className={mediaColumnClassName}>
                         <Slider {...settings} ref={sliderRef}>
                           <div className="item">
                             <img
-                              className="img-fluid"
+                              className={modalImageClassName}
                               alt=""
                               src={projectDetails?.thumbImage}
                             />
@@ -111,7 +129,7 @@ const ProjectDetailsModal = ({ projectDetails, setIsOpen }) => {
                               (image, index) => (
                                 <div className="item" key={index}>
                                   <img
-                                    className="img-fluid"
+                                    className={modalImageClassName}
                                     alt=""
                                     src={image}
                                   />
@@ -120,7 +138,7 @@ const ProjectDetailsModal = ({ projectDetails, setIsOpen }) => {
                             )}
                         </Slider>
                       </div>
-                      <div className="col-md-5">
+                      <div className={detailsColumnClassName}>
                         <h4 className={"text-4 fw-600"}>Project Info:</h4>
                         <p>{projectDetails?.document?.projectInfo}</p>
                         <h4 className={"text-4 fw-600 mt-4"}>

@@ -3,10 +3,14 @@ import Isotope from "isotope-layout";
 import ProjectDetailsModal from "./ProjectDetailsModal";
 
 const Portfolio = () => {
+  const INITIAL_VISIBLE_PROJECTS = 10;
+  const LOAD_MORE_STEP = 3;
+
   // init one ref to store the future isotope object
   const isotope = useRef();
   // store the filter keyword in a state
   const [filterKey, setFilterKey] = useState("*");
+  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_PROJECTS);
   const [imagesLoaded, setimagesLoaded] = useState(0);
   const [selectedProjectDetails, setSelectedProjectDetails] = useState();
   const [isOpen, setIsOpen] = useState(false);
@@ -21,8 +25,8 @@ const Portfolio = () => {
       WEB: "Web Apps",
       MOBILE: "Mobile Apps",
       FULLSTACK: "Full Stack",
-      AI: "AI / Machine Learning",
-      REALTIME: "Real-time / Calling",
+      AI: "AI, ML & LLMs",
+      REALTIME: "Real-Time & Calling",
       SUPPORT: "Support & Maintenance",
     }),
     []
@@ -45,7 +49,7 @@ const Portfolio = () => {
         type: types.DOCUMENT,
         document: {
           projectInfo:
-            "Led development of a MERN-based courier operations platform to streamline delivery workflows and improve operational efficiency by 30%. Built scalable backend services and APIs for smooth operational management.",
+            "Led development of a MERN-based courier platform that streamlined delivery workflows and improved operational efficiency by 30%. Built scalable APIs and backend services for day-to-day operations.",
           client: "Efito Solutions (Pvt) Ltd",
           technologies: "React.js, Node.js, Express.js, MongoDB",
           industry: "Logistics / Delivery",
@@ -65,7 +69,7 @@ const Portfolio = () => {
         type: types.DOCUMENT,
         document: {
           projectInfo:
-            "Built the Fan Budget admin dashboard to manage platform operations. Focused on maintainability, performance, and scalable backend integration.",
+            "Built the Fan Budget admin dashboard to manage platform operations. Focused on maintainability, performance, and clean backend integration.",
           client: "Efito Solutions (Pvt) Ltd",
           technologies: "React.js, Node.js, Express.js, MongoDB",
           industry: "FinTec / Admin System",
@@ -81,9 +85,10 @@ const Portfolio = () => {
       {
         title: "Compatible1 – Mobile App (Real-time + Calling)",
         type: types.DOCUMENT,
+        imageClassName: "portfolio-image--compact",
         document: {
           projectInfo:
-            "Developed a Flutter mobile app with real-time features and calling. Integrated Socket.io and ZegoCloud with AI-enhanced call management and subscription-based call duration handling.",
+            "Built a Flutter app with real-time messaging and calling features. Integrated Socket.io and ZegoCloud, including AI-assisted call handling and subscription-based call limits.",
           client: "Efito Solutions (Client Project)",
           technologies: "Flutter, Node.js, Socket.io, ZegoCloud",
           industry: "Dating / Social Media / Communication / Mobile",
@@ -104,9 +109,10 @@ const Portfolio = () => {
       {
         title: "Fan Budget – Mobile App",
         type: types.DOCUMENT,
+        imageClassName: "portfolio-image--compact",
         document: {
           projectInfo:
-            "Contributed to the Fan Budget mobile application with backend API integration and performance-focused development for a smooth mobile experience.",
+            "Contributed to the Fan Budget mobile app with backend API integration and performance-focused improvements for a smoother user experience.",
           client: "Efito Solutions",
           technologies: "Flutter, Node.js, REST APIs",
           industry: "FinTec / Mobile",
@@ -127,11 +133,61 @@ const Portfolio = () => {
         categories: [filters.MOBILE, filters.FULLSTACK],
       },
       {
+        title: "HireLens AI – AI-Powered Interview and Hiring Intelligence Platform",
+        type: types.DOCUMENT,
+        document: {
+          projectInfo:
+            "Built a full-stack AI hiring platform for candidate evaluation, job matching, and interview intelligence using FastAPI, Next.js, and LangChain. Added RAG-based insights over CVs and job descriptions, plus LLM-powered question generation, skill gap analysis, personalised feedback, and candidate ranking.",
+          client: "Personal Project",
+          technologies:
+            "FastAPI, Next.js, LangChain, RAG, LLMs, CV-to-Job Matching",
+          industry: "HR Tech / AI",
+          date: "",
+          url: { name: "Private / Demo", link: "" },
+          sliderImages: [
+            "images/projects/hirelense-ai1.png",
+            "images/projects/hirelense-ai2.png",
+            "images/projects/hirelense-ai3.png",
+            "images/projects/hirelense-ai4.png",
+            "images/projects/hirelense-ai5.png",
+            "images/projects/hirelense-ai6.png",
+            "images/projects/hirelense-ai7.png",
+            "images/projects/hirelense-ai8.png",
+            "images/projects/hirelense-ai9.png",
+          ],
+        },
+        thumbImage: "images/projects/hirelense-ai1.png",
+        categories: [filters.AI, filters.FULLSTACK, filters.WEB],
+      },
+      {
+        title: "DocMind AI – AI Knowledge System for Multi-Source Document Intelligence using RAG",
+        type: types.DOCUMENT,
+        modalImageClassName: "project-details-modal__image--large",
+        document: {
+          projectInfo:
+            "Built a full-stack AI knowledge system for natural language querying over documents using RAG. Users can provide knowledge through uploaded documents, Google Drive links, manual text, and similar sources. Developed backend services with FastAPI, LangChain, and Qdrant for semantic search and LLM-powered responses, and designed secure APIs with a React dashboard for managing multiple knowledge bases.",
+          client: "Personal Project",
+          technologies:
+            "FastAPI, React, LangChain, Qdrant, RAG, Semantic Search, LLMs",
+          industry: "Knowledge Management / AI",
+          date: "",
+          url: { name: "Private / Demo", link: "" },
+          sliderImages: [
+            "images/projects/docmind2.png",
+            "images/projects/docmind3.png",
+            "images/projects/docmind4.png",
+            "images/projects/docmind5.png",
+          ],
+        },
+        thumbImage: "images/projects/docmind1.png",
+        categories: [filters.AI, filters.FULLSTACK, filters.WEB],
+      },
+      {
         title: "HungerLink – Backoffice (React) + API Optimisation",
         type: types.DOCUMENT,
         document: {
           projectInfo:
-            "Built a React.js back-office and optimised backend APIs, improving overall system performance by ~25%. Focused on scalable UI flows and faster API response times.",
+            "Built a React back-office and optimised backend APIs, improving system performance by about 25%. Focused on scalable UI flows and faster response times.",
           client: "HungerLink (Canada)",
           technologies: "React.js, REST APIs, Performance Optimisation",
           industry: "Food Bank / Non-profit",
@@ -145,12 +201,13 @@ const Portfolio = () => {
         thumbImage: "images/projects/hungerlink-2.png",
         categories: [filters.WEB, filters.FULLSTACK],
       },
-{
+      {
         title: "InstaLeaf – AI-Powered Plant Disease Classification (MSc Final Project)",
         type: types.DOCUMENT,
+        imageClassName: "portfolio-image--compact",
         document: {
           projectInfo:
-            "Designed, implemented, and evaluated a mobile-based plant disease classification system using lightweight deep learning models (MobileNetV2, EfficientNet-B0) optimised for CPU inference. Built a hybrid mobile–cloud architecture with Flutter, Node.js, MongoDB, and Python/TensorFlow microservices. Added explainability with Grad-CAM overlays and compared interpretability methods (Grad-CAM, Saliency Maps, Integrated Gradients). Achieved macro-F1 up to 95% with sub-1s inference latency on mid-range devices. Applied TensorFlow Lite quantisation to reduce model size and improve speed.",
+            "Built a mobile plant disease detection system using lightweight deep learning models optimised for on-device inference. Combined Flutter, Node.js, MongoDB, and TensorFlow services, added Grad-CAM explainability, and achieved up to 95% macro-F1 with sub-1s inference on mid-range devices.",
           client: "Edge Hill University (MSc Data Science & Artificial Intelligence)",
           technologies:
             "Flutter, Node.js, MongoDB, Python, TensorFlow, TensorFlow Lite, MobileNetV2, EfficientNet-B0, Grad-CAM",
@@ -176,7 +233,7 @@ const Portfolio = () => {
         type: types.DOCUMENT,
         document: {
           projectInfo:
-            "Engineered and maintained features across the EventsX platform while collaborating with the UK office. Balanced development responsibilities with enterprise-level support.",
+            "Developed and maintained features across the EventsX platform while working closely with the UK team. Balanced feature delivery with enterprise-level support responsibilities.",
           client: "LAYOUTindex UK Ltd (SL Development Centre)",
           technologies: "React.js, Node.js, PHP, Python (Project stack varied)",
           industry: "Events / Platform",
@@ -194,9 +251,10 @@ const Portfolio = () => {
       {
         title: "CineSync – Web/Mobile Application",
         type: types.DOCUMENT,
+        imageClassName: "portfolio-image--compact",
         document: {
           projectInfo:
-            "Contributed to development and maintenance work across CineSync. Worked with UK stakeholders and provided technical support to ensure stable delivery and high uptime.",
+            "Contributed to CineSync development and maintenance across web and mobile. Worked with UK stakeholders and provided support to keep delivery stable and reliable.",
           client: "LAYOUTindex UK Ltd (SL Development Centre)",
           technologies: "React Native, React.js, Node.js, PHP (Project stack varied)",
           industry: "Media / Application",
@@ -213,9 +271,10 @@ const Portfolio = () => {
       {
         title: "Smart Health App – Brain Tumor Detection (BSc Final Project)",
         type: types.DOCUMENT,
+        imageClassName: "portfolio-image--compact",
         document: {
           projectInfo:
-            "First-class BSc (Hons) final-year research project focused on automated brain tumor detection from MRI images using image processing and machine learning techniques. Designed a mobile health application enabling users to upload MRI scans and receive tumor classification, location highlighting, and size estimation. Implemented preprocessing, segmentation, feature extraction, and classification pipelines. The system supported axial, coronal, and sagittal MRI views and provided volumetric tumor size estimation. This project formed the basis of an academic research publication.",
+            "Built a mobile health app for brain tumor detection from MRI scans using image processing and machine learning. It classified tumors, highlighted their location, estimated size across multiple MRI views, and later formed the basis of an academic publication.",
           client: "University of Wolverhampton",
           technologies:
             "Flutter, Python, TensorFlow, Image Processing, Firebase, MRI Analysis",
@@ -243,7 +302,7 @@ const Portfolio = () => {
         type: types.DOCUMENT,
         document: {
           projectInfo:
-            "Delivered a responsive web solution for Arya Taprobane Travels to improve online presence and client engagement. Implemented modern UI, performance improvements, and clean integration-ready structure for future features.",
+            "Delivered a responsive website for Arya Taprobane Travels to strengthen online presence and customer engagement. Focused on modern UI, performance, and a clean foundation for future features.",
           client: "Arya Taprobane Travels Sri Lanka",
           technologies: "React.js, NextJS Node.js, REST APIs (as applicable)",
           industry: "Travel & Tourism",
@@ -280,7 +339,7 @@ const Portfolio = () => {
         type: types.DOCUMENT,
         document: {
           projectInfo:
-            "Provided enterprise-level technical support and contributed to development tasks to ensure 99% uptime for a mission-critical accounting platform.",
+            "Provided technical support and development for a mission-critical accounting platform. Helped maintain 99% uptime and stable day-to-day operations.",
           client: "LAYOUTindex Ltd (SL Development Centre)",
           technologies: "PHP, React.js (Project stack varied)",
           industry: "Accounting / SaaS",
@@ -315,12 +374,20 @@ const Portfolio = () => {
 
   // handling filter key change
   useEffect(() => {
-    if (imagesLoaded) {
+    if (imagesLoaded && isotope.current) {
+      isotope.current.reloadItems();
       filterKey === "*"
         ? isotope.current.arrange({ filter: "*" })
         : isotope.current.arrange({ filter: `.${filterKey}` });
+      isotope.current.layout();
     }
-  }, [filterKey, imagesLoaded]);
+  }, [filterKey, imagesLoaded, visibleCount]);
+
+  useEffect(() => {
+    if (filterKey === "*") {
+      setVisibleCount(INITIAL_VISIBLE_PROJECTS);
+    }
+  }, [filterKey]);
 
   const handleFilterKeyChange = (key) => () => setFilterKey(key);
 
@@ -340,6 +407,19 @@ const Portfolio = () => {
     if (!categories || categories.length === 0) return "";
     return categories[0];
   };
+
+  const visibleProjects = useMemo(() => {
+    if (filterKey === "*") {
+      return projectsData;
+    }
+
+    return projectsData.filter((project) =>
+      project.categories?.includes(filters[filterKey])
+    );
+  }, [filterKey, filters, projectsData, visibleCount]);
+
+  const hasMoreProjects =
+    filterKey === "*" && visibleCount < projectsData.length;
 
   return (
     <>
@@ -379,8 +459,8 @@ const Portfolio = () => {
           {/* Filter Menu end */}
 
           <div className="portfolio wow fadeInUp">
-            <div className="row portfolio-filter filter-container g-4">
-              {projectsData.map((project, index) => (
+            <div className="row portfolio-filter filter-container g-3">
+              {visibleProjects.map((project, index) => (
                 <div
                   className={
                     "col-sm-6 col-lg-4 filter-item " +
@@ -389,17 +469,25 @@ const Portfolio = () => {
                   key={index}
                 >
                   <div className="portfolio-box">
-                    <div className="portfolio-img">
+                    <div
+                      className={
+                        "portfolio-img " +
+                        (project.imageClassName ? "portfolio-img--compact" : "")
+                      }
+                    >
                       <img
                         onLoad={() => setimagesLoaded((prev) => prev + 1)}
-                        className="img-fluid d-block portfolio-image"
+                        className={
+                          "img-fluid d-block portfolio-image " +
+                          (project.imageClassName || "")
+                        }
                         src={project.thumbImage}
                         alt={project.title}
                       />
                       <div
                         className="portfolio-overlay"
                         onClick={() => {
-                          setSelectedProjectDetails(projectsData[index]);
+                          setSelectedProjectDetails(project);
                           setIsOpen(true);
                         }}
                       >
@@ -422,6 +510,14 @@ const Portfolio = () => {
                           <span className="text-light">
                             {getPrimaryCategoryLabel(project.categories)}
                           </span>
+                          <p className="text-light portfolio-overlay-date mt-2 mb-0">
+                            {project.document?.date}
+                          </p>
+                          <div className="mt-3">
+                            <span className="portfolio-overlay-cta">
+                              View Project Details
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -430,6 +526,22 @@ const Portfolio = () => {
               ))}
             </div>
           </div>
+
+          {/* {hasMoreProjects && (
+            <div className="text-center mt-5 wow fadeInUp">
+              <button
+                type="button"
+                className="btn btn-outline-dark rounded-0 px-4"
+                onClick={() =>
+                  setVisibleCount((prev) =>
+                    Math.min(prev + LOAD_MORE_STEP, projectsData.length)
+                  )
+                }
+              >
+                Load More Projects
+              </button>
+            </div>
+          )} */}
         </div>
       </section>
 

@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-lg-6 text-center text-lg-start wow fadeInUp">
             <p className="mb-2 mb-lg-0">
-              Copyright © 2025{" "}
+              Copyright © 2026{" "}
               <a className="fw-600" href="/">
                 Eranga
               </a>

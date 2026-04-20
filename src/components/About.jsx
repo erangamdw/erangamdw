@@ -20,13 +20,22 @@ const AboutUs = () => {
               </span>
             </h2>
             <p className="text-5">
-            Software Engineer & AI Enthusiast with 6+ years of experience building AI-driven, full-stack web and mobile applications (MERN,
-            Flutter, React Native) and hands-on expertise in Machine Learning and Deep Learning. Published IEEE researcher with an MSc in
-            Data Science & Artificial Intelligence from Edge Hill University and a First-Class BSc (Hons) in Computer Science (Software
-            Engineering) from the University of Wolverhampton.
-            Skilled in delivering scalable, high-performance solutions, leading development teams, and integrating intelligent systems. Passionate
-            about AI-native development, LLMs, Generative AI, and Agentic automation, combining practical engineering expertise with applied
-            deep learning to build next-generation intelligent systems.
+              Software Engineer with 6+ years of experience building and
+              scaling backend and full-stack web and mobile applications using
+              Node.js, Python, React, and Flutter. I have delivered secure,
+              high-performance REST APIs, real-time systems, and production
+              platforms serving 10K+ users, while working closely with
+              UK-based teams on reliable, business-critical software.
+              <br />
+              <br />
+              My recent work focuses on applied AI, including LLM
+              integrations, Retrieval-Augmented Generation (RAG), semantic
+              search, and intelligent automation. I also hold an MSc in Data
+              Science & Artificial Intelligence from Edge Hill University and
+              a First-Class BSc (Hons) in Computer Science (Software
+              Engineering) from the University of Wolverhampton, combining
+              strong software engineering fundamentals with practical AI
+              systems development.
             </p>
           </div>
           <div
@@ -36,7 +45,7 @@ const AboutUs = () => {
             <div className="featured-box style-4">
               <div className="featured-box-icon text-25 fw-500 bg-primary rounded-circle">
                 <span className="wow heartBeat" data-wow-delay="1.3s">
-                  7
+                  6+
                 </span>
               </div>
               <h3 className="text-7 wow rubberBand" data-wow-delay="2s">

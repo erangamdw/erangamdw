@@ -4,33 +4,33 @@ const Services = () => {
   // services details
   const services = [
     {
-      name: "AI & Machine Learning",
-      desc: "Designing intelligent systems using Deep Learning, Computer Vision, and NLP with TensorFlow, PyTorch, and Hugging Face. Experienced in Generative AI, Large Language Models (LLMs), and agentic automation.",
-      icon: "fas fa-brain",
-    },
-    {
-      name: "Full-Stack Web Development",
-      desc: "Building modern web applications with the MERN stack (MongoDB, Express.js, React.js, Node.js). Skilled in developing scalable REST APIs, real-time systems with Socket.io, and seamless integrations.",
+      name: "Full-Stack Software Development",
+      desc: "Building scalable web applications with React, Next.js, Node.js, and modern data stacks, from polished frontend experiences to secure backend services and production-ready delivery.",
       icon: "fas fa-laptop-code",
     },
     {
+      name: "AI & LLM Applications",
+      desc: "Building practical AI features with OpenAI APIs, LangChain, RAG pipelines, semantic search, prompt engineering, and intelligent automation for real user workflows.",
+      icon: "fas fa-brain",
+    },
+    {
       name: "Mobile App Development",
-      desc: "Developing cross-platform mobile apps using Flutter and React Native, integrated with real-time communication (ZegoCloud, Socket.io) and secure payment systems like Stripe and PayPal.",
+      desc: "Delivering cross-platform mobile apps with Flutter and React Native, including real-time communication, secure integrations, and backend-connected user experiences.",
       icon: "fas fa-mobile-alt",
     },
     {
       name: "Backend & API Engineering",
-      desc: "Engineering robust, optimized, and secure backend services with Node.js, Express.js, and Python (Flask, FastAPI). Focused on high-performance architecture with sub-200ms API response times.",
+      desc: "Designing secure, high-performance backend systems with Node.js, Python, FastAPI, and Express, including REST APIs, authentication, async processing, and scalable data models.",
       icon: "fas fa-server",
     },
     {
-      name: "Cloud & DevOps Integration",
-      desc: "Deploying and maintaining scalable applications on AWS, Firebase, and Docker environments with CI/CD pipelines. Ensuring reliability, performance, and security across deployments.",
+      name: "Cloud, DevOps & Deployment",
+      desc: "Deploying and maintaining reliable applications with AWS, Docker, CI/CD, and production monitoring, with a focus on performance, stability, and maintainable delivery workflows.",
       icon: "fas fa-cloud",
     },
     {
-      name: "Technical Support & ERP Systems",
-      desc: "Delivering enterprise-level technical support, troubleshooting, and ERP (SAP) maintenance. Ensuring system uptime, efficient workflows, and comprehensive technical documentation.",
+      name: "Applied AI Engineering",
+      desc: "Combining software engineering with machine learning foundations to build AI-powered systems, from model-backed prototypes to production-ready tools that support business decisions.",
       icon: "fas fa-tools",
     },
   ];
@@ -43,7 +43,7 @@ const Services = () => {
           <span className="bg-primary text-dark px-2">My Expertise</span>
         </p>
         <h2 className="text-10 fw-600 text-center mb-5 wow fadeInUp">
-          Areas where I bring value as a Software Engineer
+          Full-Stack Engineering and AI Systems I Build
         </h2>
         {/* Heading end*/}
         <div className="row gy-5 mt-5">

@@ -162,23 +162,6 @@ const StandardMenuHeader = () => {
                     style={{ cursor: "pointer" }}
                     activeClass="active"
                     spy
-                    to="testimonial"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsNavModalClose(true);
-                    }}
-                  >
-                    Client
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className="nav-link "
-                    smooth="easeInOutQuint"
-                    duration={scrollDuration}
-                    style={{ cursor: "pointer" }}
-                    activeClass="active"
-                    spy
                     to="contact"
                     onClick={(e) => {
                       e.preventDefault();
@@ -193,36 +176,25 @@ const StandardMenuHeader = () => {
           </div>
           <div className="col-auto col-lg-2 d-flex justify-content-end ps-0">
             <ul className="social-icons">
-              <li className="social-icons-facebook">
-                <Tooltip text="Twitter" placement="bottom">
+              <li className="social-icons-github">
+                <Tooltip text="GitHub" placement="bottom">
                   <a
-                    href="http://www.facebook.com/"
+                    href="https://github.com/erangamdw"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fab fa-facebook" />
+                    <i className="fab fa-github" />
                   </a>
                 </Tooltip>
               </li>
-              <li className="social-icons-twitter">
-                <Tooltip text="Twitter" placement="bottom">
+              <li className="social-icons-linkedin">
+                <Tooltip text="LinkedIn" placement="bottom">
                   <a
-                    href="http://www.twitter.com/"
+                    href="https://www.linkedin.com/in/eranga-mdw/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fab fa-twitter" />
-                  </a>
-                </Tooltip>
-              </li>
-              <li className="social-icons-instagram">
-                <Tooltip text="Twitter" placement="bottom">
-                  <a
-                    href="http://www.instagram.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-instagram" />
+                    <i className="fab fa-linkedin-in" />
                   </a>
                 </Tooltip>
               </li>

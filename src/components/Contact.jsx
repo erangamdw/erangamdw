@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -8,48 +7,57 @@ import { Tooltip } from "./Tooltip";
 const Contact = () => {
   const form = useRef();
   const [sendingMail, setSendingMail] = useState(false);
+  const formSubmitEndpoint = "https://formsubmit.co/ajax/erangamdw@gmail.com";
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setSendingMail(true);
-    emailjs
-      .sendForm(
-        "service_i8Fk3ms",
-        "template_siFcin9",
-        form.current,
-        "c9HsFgGF0tFWyVnAL"
-      )
-      .then(
-        (result) => {
-          document.getElementById("contact-form").reset();
-          toast.success("Message sent successfully!", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
-          console.log(result.text);
-          setSendingMail(false);
+
+    try {
+      const formData = new FormData(form.current);
+      formData.append("_subject", "New portfolio contact message");
+      formData.append("_template", "table");
+      formData.append("_replyto", String(formData.get("user_email") || ""));
+
+      const response = await fetch(formSubmitEndpoint, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
         },
-        (error) => {
-          toast.error("Something went wrong!", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
-          console.log(error.text);
-          setSendingMail(false);
-        }
-      );
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Something went wrong!");
+      }
+
+      document.getElementById("contact-form").reset();
+      toast.success(result.message || "Message sent successfully!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } catch (error) {
+      toast.error(error.message || "Something went wrong!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } finally {
+      setSendingMail(false);
+    }
   };
 
   return (
@@ -59,14 +67,40 @@ const Contact = () => {
           <div className="col-lg-5 text-center text-lg-start wow fadeInUp">
             <h2 className="text-10 fw-600 mb-5">Let's get in touch</h2>
             <p className="text-5 mb-5">
-              I’m always open to discussing new opportunities, interesting projects, and technical challenges.
-If you’re looking for a backend-focused full stack engineer, mobile developer, or someone with a strong interest in AI and LLM-driven systems, feel free to reach out. The more details you share, the more productive our first conversation will be.
+              I’m open to discussing backend-focused full-stack engineering
+              roles, AI and LLM-powered product work, freelance projects, and
+              technically ambitious ideas. If you need someone who can work
+              across backend systems, full-stack delivery, and practical AI
+              features, feel free to reach out with a bit of context about
+              your project, team, or opportunity.
             </p>
-            <h3 className="text-5 fw-600">Living In:</h3>
-            <address className="text-4">
-              London, United Kingdom
-            </address>
-            <h3 className="text-5 fw-600">Call:</h3>
+            <h3 className="text-5 fw-600">
+              <i className="fas fa-map-marker-alt me-2" aria-hidden="true" />
+              Living In:
+            </h3>
+            <address className="text-4">London, United Kingdom</address>
+            <h3 className="text-5 fw-600">
+              <i className="fas fa-envelope me-2" aria-hidden="true" />
+              Email:
+            </h3>
+            <p className="text-4">
+              <a
+                href="mailto:erangamdw@gmail.com"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  transition: "opacity 0.2s ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.75")}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+              >
+                erangamdw@gmail.com
+              </a>
+            </p>
+            <h3 className="text-5 fw-600">
+              <i className="fas fa-phone me-2" aria-hidden="true" />
+              Call:
+            </h3>
             <p className="text-4">
               <a
                 href="tel:+447542135343"
@@ -83,43 +117,10 @@ If you’re looking for a backend-focused full stack engineer, mobile developer,
             </p>
 
             <ul className="social-icons social-icons-lg justify-content-center justify-content-lg-start mt-5">
-              <li className="social-icons-twitter">
-                <Tooltip text="Twitter" placement="top">
-                  <a
-                    href="https://twitter.com/erangamdw/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-twitter" />
-                  </a>
-                </Tooltip>
-              </li>
-              <li className="social-icons-facebook">
-                <Tooltip text="Facebook" placement="top">
-                  <a
-                    href="http://www.facebook.com/erangamdw/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-facebook" />
-                  </a>
-                </Tooltip>
-              </li>
-              <li className="social-icons-instagram">
-                <Tooltip text="Instagram" placement="top">
-                  <a
-                    href="http://www.instagram.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-instagram" />
-                  </a>
-                </Tooltip>
-              </li>
               <li className="social-icons-github">
                 <Tooltip text="Github" placement="top">
                   <a
-                    href="http://www.github.com/"
+                    href="https://github.com/erangamdw"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -127,14 +128,14 @@ If you’re looking for a backend-focused full stack engineer, mobile developer,
                   </a>
                 </Tooltip>
               </li>
-              <li className="social-icons-dribbble">
-                <Tooltip text="Dribbble" placement="top">
+              <li className="social-icons-linkedin">
+                <Tooltip text="LinkedIn" placement="top">
                   <a
-                    href="http://www.dribbble.com/erangamdw/"
+                    href="https://www.linkedin.com/in/eranga-mdw/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fab fa-dribbble" />
+                    <i className="fab fa-linkedin" />
                   </a>
                 </Tooltip>
               </li>
@@ -147,6 +148,10 @@ If you’re looking for a backend-focused full stack engineer, mobile developer,
             <h2 className="text-10 fw-600 text-center text-lg-start mb-5">
               Contact Me
             </h2>
+            <p className="text-4 text-center text-lg-start mb-4">
+              Share a few details about your role, project, or idea, and I’ll
+              get back to you as soon as I can.
+            </p>
             {/* Contact Form */}
             <form
               id="contact-form"
@@ -155,10 +160,17 @@ If you’re looking for a backend-focused full stack engineer, mobile developer,
               ref={form}
               onSubmit={sendEmail}
             >
+              <input
+                type="text"
+                name="_honey"
+                className="d-none"
+                tabIndex="-1"
+                autoComplete="off"
+              />
               <div className="row g-4">
                 <div className="col-12">
                   <label className="form-label" htmlFor="name">
-                    What is Your Name:
+                    Your Name:
                   </label>
                   <input
                     id="name"
@@ -182,7 +194,7 @@ If you’re looking for a backend-focused full stack engineer, mobile developer,
                 </div>
                 <div className="col-12">
                   <label className="form-label" htmlFor="form-message">
-                    How can I Help you?:
+                    How Can I Help You?
                   </label>
                   <textarea
                     id="form-message"
@@ -206,7 +218,7 @@ If you’re looking for a backend-focused full stack engineer, mobile developer,
                           aria-hidden="true"
                           className="spinner-border spinner-border-sm align-self-center me-2"
                         ></span>
-                        Sending......
+                        Sending...
                       </>
                     ) : (
                       <>

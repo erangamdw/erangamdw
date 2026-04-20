@@ -15,8 +15,12 @@ const defaultAssistantMessage = {
   id: "welcome",
   role: "assistant",
   content:
-    "Hi, I am Eranga's AI assistant. I can answer in Eranga's voice about my projects, skills, experience, LLM/AI engineering expertise, and availability.",
+    "Hi, I’m Eranga’s AI assistant. I answer questions about Eranga, including his experience, skills, projects, education, and availability.",
 };
+const LEGACY_WELCOME_MESSAGES = new Set([
+  "Hi, I am Eranga's AI assistant. I can answer in Eranga's voice about my projects, skills, experience, LLM/AI engineering expertise, and availability.",
+  "Hi, I’m Eranga’s AI assistant. I only answer questions about Eranga, including his experience, skills, projects, education, and availability.",
+]);
 
 const normalizeStoredMessages = (loadedMessages) => {
   if (!Array.isArray(loadedMessages)) {
@@ -32,7 +36,21 @@ const normalizeStoredMessages = (loadedMessages) => {
     }))
     .filter((item) => item.content.length > 0);
 
-  return normalized.length > 0 ? normalized : [defaultAssistantMessage];
+  const withUpdatedWelcome = normalized.map((item, index) => {
+    if (
+      index === 0 &&
+      item.role === "assistant" &&
+      (item.id === "welcome" || LEGACY_WELCOME_MESSAGES.has(item.content))
+    ) {
+      return defaultAssistantMessage;
+    }
+
+    return item;
+  });
+
+  return withUpdatedWelcome.length > 0
+    ? withUpdatedWelcome
+    : [defaultAssistantMessage];
 };
 
 const mapForApi = (messages) => {
@@ -208,7 +226,7 @@ const ChatWidget = () => {
             <div>
               <div className="chat-widget__title">Eranga AI Assistant</div>
               <div className="chat-widget__subtitle">
-                Portfolio-aware responses in real time
+                Only answers questions about Eranga
               </div>
             </div>
             <button
@@ -241,7 +259,7 @@ const ChatWidget = () => {
                 type="text"
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
-                placeholder="Ask about Eranga's experience, skills, or projects..."
+                placeholder="Ask only about Eranga's experience, skills, projects, or availability..."
                 maxLength={1200}
                 disabled={isSending}
                 aria-label="Type your message"
