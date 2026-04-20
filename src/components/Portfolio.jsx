@@ -45,6 +45,56 @@ const Portfolio = () => {
   const projectsData = useMemo(
     () => [
       {
+        title: "HireLens AI – AI-Powered Interview and Hiring Intelligence Platform",
+        type: types.DOCUMENT,
+        document: {
+          projectInfo:
+            "Built a full-stack AI hiring platform for candidate evaluation, job matching, and interview intelligence using FastAPI, Next.js, and LangChain. Added RAG-based insights over CVs and job descriptions, plus LLM-powered question generation, skill gap analysis, personalised feedback, and candidate ranking.",
+          client: "Personal Project",
+          technologies:
+            "FastAPI, Next.js, LangChain, RAG, LLMs, CV-to-Job Matching",
+          industry: "HR Tech / AI",
+          date: "",
+          url: { name: "Private / Demo", link: "" },
+          sliderImages: [
+            "images/projects/hirelense-ai1.png",
+            "images/projects/hirelense-ai2.png",
+            "images/projects/hirelense-ai3.png",
+            "images/projects/hirelense-ai4.png",
+            "images/projects/hirelense-ai5.png",
+            "images/projects/hirelense-ai6.png",
+            "images/projects/hirelense-ai7.png",
+            "images/projects/hirelense-ai8.png",
+            "images/projects/hirelense-ai9.png",
+          ],
+        },
+        thumbImage: "images/projects/hirelense-ai1.png",
+        categories: [filters.AI, filters.FULLSTACK, filters.WEB],
+      },
+      {
+        title: "DocMind AI – AI Knowledge System for Multi-Source Document Intelligence using RAG",
+        type: types.DOCUMENT,
+        modalImageClassName: "project-details-modal__image--large",
+        document: {
+          projectInfo:
+            "Built a full-stack AI knowledge system for natural language querying over documents using RAG. Users can provide knowledge through uploaded documents, Google Drive links, manual text, and similar sources. Developed backend services with FastAPI, LangChain, and Qdrant for semantic search and LLM-powered responses, and designed secure APIs with a React dashboard for managing multiple knowledge bases.",
+          client: "Personal Project",
+          technologies:
+            "FastAPI, React, LangChain, Qdrant, RAG, Semantic Search, LLMs",
+          industry: "Knowledge Management / AI",
+          date: "",
+          url: { name: "Private / Demo", link: "" },
+          sliderImages: [
+            "images/projects/docmind2.png",
+            "images/projects/docmind3.png",
+            "images/projects/docmind4.png",
+            "images/projects/docmind5.png",
+          ],
+        },
+        thumbImage: "images/projects/docmind1.png",
+        categories: [filters.AI, filters.FULLSTACK, filters.WEB],
+      },
+      {
         title: "Zulu Courier – Delivery Management Platform",
         type: types.DOCUMENT,
         document: {
@@ -131,56 +181,6 @@ const Portfolio = () => {
         },
         thumbImage: "images/projects/fanbudget.jpg",
         categories: [filters.MOBILE, filters.FULLSTACK],
-      },
-      {
-        title: "HireLens AI – AI-Powered Interview and Hiring Intelligence Platform",
-        type: types.DOCUMENT,
-        document: {
-          projectInfo:
-            "Built a full-stack AI hiring platform for candidate evaluation, job matching, and interview intelligence using FastAPI, Next.js, and LangChain. Added RAG-based insights over CVs and job descriptions, plus LLM-powered question generation, skill gap analysis, personalised feedback, and candidate ranking.",
-          client: "Personal Project",
-          technologies:
-            "FastAPI, Next.js, LangChain, RAG, LLMs, CV-to-Job Matching",
-          industry: "HR Tech / AI",
-          date: "",
-          url: { name: "Private / Demo", link: "" },
-          sliderImages: [
-            "images/projects/hirelense-ai1.png",
-            "images/projects/hirelense-ai2.png",
-            "images/projects/hirelense-ai3.png",
-            "images/projects/hirelense-ai4.png",
-            "images/projects/hirelense-ai5.png",
-            "images/projects/hirelense-ai6.png",
-            "images/projects/hirelense-ai7.png",
-            "images/projects/hirelense-ai8.png",
-            "images/projects/hirelense-ai9.png",
-          ],
-        },
-        thumbImage: "images/projects/hirelense-ai1.png",
-        categories: [filters.AI, filters.FULLSTACK, filters.WEB],
-      },
-      {
-        title: "DocMind AI – AI Knowledge System for Multi-Source Document Intelligence using RAG",
-        type: types.DOCUMENT,
-        modalImageClassName: "project-details-modal__image--large",
-        document: {
-          projectInfo:
-            "Built a full-stack AI knowledge system for natural language querying over documents using RAG. Users can provide knowledge through uploaded documents, Google Drive links, manual text, and similar sources. Developed backend services with FastAPI, LangChain, and Qdrant for semantic search and LLM-powered responses, and designed secure APIs with a React dashboard for managing multiple knowledge bases.",
-          client: "Personal Project",
-          technologies:
-            "FastAPI, React, LangChain, Qdrant, RAG, Semantic Search, LLMs",
-          industry: "Knowledge Management / AI",
-          date: "",
-          url: { name: "Private / Demo", link: "" },
-          sliderImages: [
-            "images/projects/docmind2.png",
-            "images/projects/docmind3.png",
-            "images/projects/docmind4.png",
-            "images/projects/docmind5.png",
-          ],
-        },
-        thumbImage: "images/projects/docmind1.png",
-        categories: [filters.AI, filters.FULLSTACK, filters.WEB],
       },
       {
         title: "HungerLink – Backoffice (React) + API Optimisation",
